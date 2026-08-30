@@ -493,12 +493,22 @@
         <span>ForePlan</span>
       </div>
 
-      <button class="btn-ghost" id="backBtn" type="button" hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-          <path d="M15 18l-6-6 6-6"></path>
-        </svg>
-        Back
-      </button>
+      <div class="header-actions">
+        <button class="btn-ghost" id="homeBtn" type="button" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M3 11l9-8 9 8"></path>
+            <path d="M5 10v10h14V10"></path>
+          </svg>
+          Home
+        </button>
+
+        <button class="btn-ghost" id="backBtn" type="button" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+          Back
+        </button>
+      </div>
     </div>
   </header>
 
@@ -926,6 +936,7 @@
     const views = [...document.querySelectorAll(".view")];
 
     const backBtn = document.getElementById("backBtn");
+    const homeBtn = document.getElementById("homeBtn");
     const saveHoleBar = document.getElementById("saveHoleBar");
     const roundBar = document.getElementById("roundBar");
 
@@ -1389,6 +1400,7 @@
       });
 
       backBtn.hidden = view === "courses";
+      homeBtn.hidden = view === "courses";
       saveHoleBar.hidden = view !== "hole";
       roundBar.hidden = view !== "round";
 
@@ -1455,6 +1467,16 @@
     function confirmDiscardCourseEdit() {
       if (!courseEditDirty) return true;
       return window.confirm("Discard your unsaved course changes?");
+    }
+
+    function goHome() {
+      if (state.view === "courseEdit" && !confirmDiscardCourseEdit()) return;
+      courseEditDirty = false;
+
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
+
+      navigateTo(makeRoute("courses"));
     }
 
     function goBack() {
@@ -2247,6 +2269,7 @@
     const renderFilteredCourses = debounce(() => { renderCourses(); }, 120);
 
     backBtn.addEventListener("click", goBack);
+    homeBtn.addEventListener("click", goHome);
 
     addCourseBtn.addEventListener("click", () => { navigateTo(makeRoute("courseEdit")); });
 
