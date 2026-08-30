@@ -3,16 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="ForePlan">
   <meta name="theme-color" content="#0f7c3e">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="ForePlan – Golf course strategy and round scoring planner.">
-
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icon-180.png">
 
   <title>ForePlan - Golf Course Strategist</title>
 
@@ -35,9 +34,7 @@
       --shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       min-height: 100%;
@@ -50,26 +47,14 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
+    button, input, select, textarea { font: inherit; }
 
     button {
       cursor: pointer;
@@ -77,23 +62,16 @@
       touch-action: manipulation;
     }
 
-    button:disabled {
-      cursor: not-allowed;
-      opacity: 0.55;
-    }
+    button:disabled { cursor: not-allowed; opacity: 0.55; }
 
-    [hidden] {
-      display: none !important;
-    }
+    [hidden] { display: none !important; }
 
     :focus-visible {
       outline: 3px solid rgba(127, 231, 181, 0.75);
       outline-offset: 2px;
     }
 
-    .view-heading:focus {
-      outline: none;
-    }
+    .view-heading:focus { outline: none; }
 
     header {
       position: sticky;
@@ -143,21 +121,10 @@
       padding: 18px 16px 100px;
     }
 
-    .view {
-      display: none;
-      flex-direction: column;
-      gap: 18px;
-    }
+    .view { display: none; flex-direction: column; gap: 18px; }
+    .view.active { display: flex; }
 
-    .view.active {
-      display: flex;
-    }
-
-    .stack-form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+    .stack-form { display: flex; flex-direction: column; gap: 18px; }
 
     .card {
       overflow: hidden;
@@ -175,31 +142,11 @@
       padding: 16px 18px 12px;
     }
 
-    .card-title {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 650;
-      letter-spacing: -0.01em;
-    }
+    .card-title { margin: 0; font-size: 1.1rem; font-weight: 650; letter-spacing: -0.01em; }
+    .card-subtitle { margin: 4px 0 0; color: var(--text-muted); font-size: 13px; }
+    .card-body { display: flex; flex-direction: column; gap: 16px; padding: 0 18px 18px; }
 
-    .card-subtitle {
-      margin: 4px 0 0;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 0 18px 18px;
-    }
-
-    .list {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--border);
-    }
+    .list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
 
     .list-item {
       display: flex;
@@ -218,46 +165,13 @@
       border-radius: 0;
     }
 
-    .list-item:first-child {
-      border-top: 0;
-    }
+    .list-item:first-child { border-top: 0; }
 
-    .list-main {
-      display: flex;
-      min-width: 0;
-      flex: 1;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .list-title {
-      overflow: hidden;
-      font-weight: 550;
-      letter-spacing: -0.01em;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .list-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-muted);
-      font-size: 13px;
-      flex-wrap: wrap;
-    }
-
-    .list-trailing {
-      display: flex;
-      flex: 0 0 auto;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .chevron {
-      display: inline-flex;
-      color: var(--text-muted);
-    }
+    .list-main { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 4px; }
+    .list-title { overflow: hidden; font-weight: 550; letter-spacing: -0.01em; text-overflow: ellipsis; white-space: nowrap; }
+    .list-meta { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; flex-wrap: wrap; }
+    .list-trailing { display: flex; flex: 0 0 auto; align-items: center; gap: 10px; }
+    .chevron { display: inline-flex; color: var(--text-muted); }
 
     .pill {
       display: inline-flex;
@@ -273,10 +187,7 @@
       border-radius: 999px;
     }
 
-    .pill.complete {
-      color: #bbf7d0;
-      background: rgba(34, 197, 94, 0.2);
-    }
+    .pill.complete { color: #bbf7d0; background: rgba(34, 197, 94, 0.2); }
 
     .empty-state {
       display: flex;
@@ -288,16 +199,8 @@
       border-top: 1px solid var(--border);
     }
 
-    .empty-state h3,
-    .empty-state p {
-      margin: 0;
-    }
-
-    .empty-state h3 {
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 550;
-    }
+    .empty-state h3, .empty-state p { margin: 0; }
+    .empty-state h3 { color: var(--text); font-size: 1rem; font-weight: 550; }
 
     .btn {
       display: inline-flex;
@@ -312,27 +215,12 @@
       background: transparent;
       border: 1px solid transparent;
       border-radius: 999px;
-      transition:
-        background-color 150ms ease,
-        border-color 150ms ease,
-        color 150ms ease,
-        transform 150ms ease;
+      transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
     }
 
-    .btn-primary {
-      color: #f6fff9;
-      background: var(--primary);
-    }
-
-    .btn-primary:active {
-      background: var(--primary-600);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: var(--surface);
-      border-color: var(--border);
-    }
+    .btn-primary { color: #f6fff9; background: var(--primary); }
+    .btn-primary:active { background: var(--primary-600); }
+    .btn-secondary { color: var(--text); background: var(--surface); border-color: var(--border); }
 
     .btn-ghost {
       display: inline-flex;
@@ -347,119 +235,32 @@
       border-radius: 999px;
     }
 
-    .btn-ghost-full {
-      width: 100%;
-      color: var(--text-muted);
-      background: transparent;
-      border-color: var(--border);
-      border-radius: 12px;
-    }
+    .btn-ghost-full { width: 100%; color: var(--text-muted); background: transparent; border-color: var(--border); border-radius: 12px; }
+    .btn-danger { color: #fca5a5; background: rgba(239, 68, 68, 0.18); border-color: rgba(239, 68, 68, 0.2); }
+    .btn-danger:active { background: rgba(239, 68, 68, 0.28); }
 
-    .btn-danger {
-      color: #fca5a5;
-      background: rgba(239, 68, 68, 0.18);
-      border-color: rgba(239, 68, 68, 0.2);
-    }
+    .header-actions, .tools-row, .form-actions, .row-between { display: flex; align-items: center; gap: 12px; }
+    .row-between { justify-content: space-between; }
+    .tools-row { justify-content: flex-end; flex-wrap: wrap; }
+    .form-actions > .btn { flex: 1; }
 
-    .btn-danger:active {
-      background: rgba(239, 68, 68, 0.28);
-    }
+    .overview { display: flex; flex-direction: column; gap: 16px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 
-    .header-actions,
-    .tools-row,
-    .form-actions,
-    .row-between {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .stat { min-width: 0; padding: 12px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+    .stat-value { display: block; overflow: hidden; font-size: 1.15rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+    .stat-label { display: block; margin-top: 2px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
 
-    .row-between {
-      justify-content: space-between;
-    }
+    .search-row { display: flex; gap: 10px; }
+    .search-row input { flex: 1; }
 
-    .tools-row {
-      justify-content: flex-end;
-      flex-wrap: wrap;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .field { display: flex; min-width: 0; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
 
-    .form-actions > .btn {
-      flex: 1;
-    }
+    label { color: var(--text-muted); font-size: 13px; }
 
-    .overview {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .stat {
-      min-width: 0;
-      padding: 12px;
-      text-align: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .stat-value {
-      display: block;
-      overflow: hidden;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .stat-label {
-      display: block;
-      margin-top: 2px;
-      color: var(--text-muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .search-row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .search-row input {
-      flex: 1;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .field {
-      display: flex;
-      min-width: 0;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    input,
-    select,
-    textarea {
+    input, select, textarea {
       width: 100%;
       min-height: 44px;
       padding: 10px 12px;
@@ -470,46 +271,14 @@
       border-radius: 12px;
     }
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #71847a;
-    }
+    input::placeholder, textarea::placeholder { color: #71847a; }
+    input:read-only { color: var(--text-muted); background: rgba(15, 21, 17, 0.65); }
+    input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown), select:invalid { border-color: rgba(239, 68, 68, 0.75); }
+    textarea { min-height: 80px; line-height: 1.6; resize: vertical; }
+    .field-error { margin: -2px 0 0; color: #fca5a5; font-size: 13px; }
 
-    input:read-only {
-      color: var(--text-muted);
-      background: rgba(15, 21, 17, 0.65);
-    }
-
-    input:invalid:not(:placeholder-shown),
-    textarea:invalid:not(:placeholder-shown),
-    select:invalid {
-      border-color: rgba(239, 68, 68, 0.75);
-    }
-
-    textarea {
-      min-height: 80px;
-      line-height: 1.6;
-      resize: vertical;
-    }
-
-    .field-error {
-      margin: -2px 0 0;
-      color: #fca5a5;
-      font-size: 13px;
-    }
-
-    .holes-nav {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding: 0 18px 6px;
-      scrollbar-width: none;
-      scroll-snap-type: x proximity;
-    }
-
-    .holes-nav::-webkit-scrollbar {
-      display: none;
-    }
+    .holes-nav { display: flex; gap: 10px; overflow-x: auto; padding: 0 18px 6px; scrollbar-width: none; scroll-snap-type: x proximity; }
+    .holes-nav::-webkit-scrollbar { display: none; }
 
     .hole-chip {
       display: inline-flex;
@@ -527,118 +296,28 @@
       scroll-snap-align: center;
     }
 
-    .hole-chip.active {
-      color: #b6f5d2;
-      background: rgba(47, 217, 124, 0.2);
-      border-color: rgba(47, 217, 124, 0.4);
-    }
+    .hole-chip.active { color: #b6f5d2; background: rgba(47, 217, 124, 0.2); border-color: rgba(47, 217, 124, 0.4); }
+    .hole-chip.scored { color: #bbf7d0; border-color: rgba(34, 197, 94, 0.4); }
 
-    .hole-chip.scored {
-      color: #bbf7d0;
-      border-color: rgba(34, 197, 94, 0.4);
-    }
+    .section-title { padding: 2px 18px 10px; color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
 
-    .section-title {
-      padding: 2px 18px 10px;
-      color: var(--text-muted);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+    .progress-summary { display: flex; flex-direction: column; gap: 8px; }
+    .progress-label { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--text-muted); font-size: 13px; }
 
-    .progress-summary {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    progress { width: 100%; height: 8px; overflow: hidden; appearance: none; background: var(--surface); border: 0; border-radius: 999px; }
+    progress::-webkit-progress-bar { background: var(--surface); border-radius: 999px; }
+    progress::-webkit-progress-value { background: linear-gradient(90deg, var(--primary), #2dd97c); border-radius: 999px; }
+    progress::-moz-progress-bar { background: linear-gradient(90deg, var(--primary), #2dd97c); border-radius: 999px; }
 
-    .progress-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
+    .course-notes-panel { padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+    .course-notes-label { display: block; margin-bottom: 5px; color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .course-notes { margin: 0; color: var(--text); font-size: 14px; white-space: pre-wrap; }
 
-    progress {
-      width: 100%;
-      height: 8px;
-      overflow: hidden;
-      appearance: none;
-      background: var(--surface);
-      border: 0;
-      border-radius: 999px;
-    }
-
-    progress::-webkit-progress-bar {
-      background: var(--surface);
-      border-radius: 999px;
-    }
-
-    progress::-webkit-progress-value {
-      background: linear-gradient(90deg, var(--primary), #2dd97c);
-      border-radius: 999px;
-    }
-
-    progress::-moz-progress-bar {
-      background: linear-gradient(90deg, var(--primary), #2dd97c);
-      border-radius: 999px;
-    }
-
-    .course-notes-panel {
-      padding: 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .course-notes-label {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--text-muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .course-notes {
-      margin: 0;
-      color: var(--text);
-      font-size: 14px;
-      white-space: pre-wrap;
-    }
-
-    .strategy-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .strategy-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .strategy-item:first-child {
-      padding-top: 0;
-    }
-
-    .strategy-label {
-      color: var(--text-muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .strategy-value {
-      margin: 0;
-      color: var(--text);
-      font-size: 14px;
-      white-space: pre-wrap;
-    }
+    .strategy-item { display: flex; flex-direction: column; gap: 4px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .strategy-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .strategy-item:first-child { padding-top: 0; }
+    .strategy-label { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .strategy-value { margin: 0; color: var(--text); font-size: 14px; white-space: pre-wrap; }
 
     .footer-actions {
       position: fixed;
@@ -655,37 +334,14 @@
       -webkit-backdrop-filter: blur(12px);
     }
 
-    .footer-actions .btn {
-      width: min(100%, 420px);
-    }
+    .footer-actions .btn { width: min(100%, 420px); }
+    .footer-split { display: flex; gap: 10px; width: min(100%, 420px); }
+    .footer-split .btn { flex: 1; }
 
-    .footer-split {
-      display: flex;
-      gap: 10px;
-      width: min(100%, 420px);
-    }
-
-    .footer-split .btn {
-      flex: 1;
-    }
-
-    #saveHoleBtn[data-save-state="saved"] {
-      background: #157a3f;
-    }
-
-    #saveHoleBtn[data-save-state="error"] {
-      color: #fee2e2;
-      background: rgba(239, 68, 68, 0.75);
-    }
-
-    #saveRoundHoleBtn[data-save-state="saved"] {
-      background: #157a3f;
-    }
-
-    #saveRoundHoleBtn[data-save-state="error"] {
-      color: #fee2e2;
-      background: rgba(239, 68, 68, 0.75);
-    }
+    #saveHoleBtn[data-save-state="saved"] { background: #157a3f; }
+    #saveHoleBtn[data-save-state="error"] { color: #fee2e2; background: rgba(239, 68, 68, 0.75); }
+    #saveRoundHoleBtn[data-save-state="saved"] { background: #157a3f; }
+    #saveRoundHoleBtn[data-save-state="error"] { color: #fee2e2; background: rgba(239, 68, 68, 0.75); }
 
     .toast {
       position: fixed;
@@ -708,44 +364,15 @@
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
       opacity: 0;
       transform: translateY(16px);
-      transition:
-        opacity 180ms ease,
-        transform 180ms ease;
+      transition: opacity 180ms ease, transform 180ms ease;
     }
 
-    .toast.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .toast.success {
-      border-color: rgba(34, 197, 94, 0.5);
-    }
-
-    .toast.warning {
-      border-color: rgba(245, 158, 11, 0.55);
-    }
-
-    .toast.danger {
-      border-color: rgba(239, 68, 68, 0.55);
-    }
-
-    .toast-message {
-      min-width: 0;
-      flex: 1;
-      font-size: 14px;
-    }
-
-    .toast-action {
-      flex: 0 0 auto;
-      min-height: 36px;
-      padding: 6px 12px;
-      color: #9af0c2;
-      font-weight: 650;
-      background: transparent;
-      border: 1px solid rgba(47, 217, 124, 0.35);
-      border-radius: 999px;
-    }
+    .toast.active { opacity: 1; transform: translateY(0); }
+    .toast.success { border-color: rgba(34, 197, 94, 0.5); }
+    .toast.warning { border-color: rgba(245, 158, 11, 0.55); }
+    .toast.danger { border-color: rgba(239, 68, 68, 0.55); }
+    .toast-message { min-width: 0; flex: 1; font-size: 14px; }
+    .toast-action { flex: 0 0 auto; min-height: 36px; padding: 6px 12px; color: #9af0c2; font-weight: 650; background: transparent; border: 1px solid rgba(47, 217, 124, 0.35); border-radius: 999px; }
 
     .sr-only {
       position: absolute !important;
@@ -759,77 +386,96 @@
       border: 0 !important;
     }
 
-    @media (min-width: 520px) {
-      .form-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .scorecard-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
     }
 
-    @media (min-width: 760px) {
-      .form-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    .scorecard {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      font-size: 13px;
     }
+
+    .scorecard th, .scorecard td {
+      padding: 10px 8px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .scorecard thead th {
+      color: var(--text-muted);
+      font-weight: 550;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(20, 32, 25, 0.4);
+    }
+
+    .scorecard tbody tr:last-child td { border-bottom: none; }
+
+    .scorecard th:first-child, .scorecard td:first-child {
+      text-align: left;
+      padding-left: 14px;
+      min-width: 70px;
+    }
+
+    .scorecard tfoot td {
+      font-weight: 650;
+      background: rgba(20, 32, 25, 0.25);
+      border-bottom: none;
+    }
+
+    .scorecard .muted { color: var(--text-muted); }
+
+    .round-comments-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .round-comment-item {
+      padding: 10px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .round-comment-hole {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .round-comment-text { margin: 0; font-size: 14px; white-space: pre-wrap; }
+
+    @media (min-width: 520px) { .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 760px) { .form-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     @media (max-width: 560px) {
-      .card-header {
-        flex-wrap: wrap;
-      }
-
-      .card-header > .header-actions {
-        width: 100%;
-      }
-
-      .card-header > .header-actions .btn {
-        width: 100%;
-      }
-
-      .row-between {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .row-between .btn {
-        width: 100%;
-      }
-
-      .tools-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .list-trailing .pill {
-        display: none;
-      }
+      .card-header { flex-wrap: wrap; }
+      .card-header > .header-actions { width: 100%; }
+      .card-header > .header-actions .btn { width: 100%; }
+      .row-between { align-items: stretch; flex-direction: column; }
+      .row-between .btn { width: 100%; }
+      .tools-row { display: grid; grid-template-columns: 1fr 1fr; }
+      .list-trailing .pill { display: none; }
     }
 
     @media (hover: hover) {
-      .list-item:hover {
-        background: var(--surface-hover);
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-600);
-        transform: translateY(-1px);
-      }
-
-      .btn-secondary:hover,
-      .btn-ghost:hover,
-      .btn-ghost-full:hover {
-        color: var(--text);
-        background: var(--surface-hover);
-      }
-
-      .hole-chip:hover {
-        color: var(--text);
-        border-color: #31453a;
-      }
+      .list-item:hover { background: var(--surface-hover); }
+      .btn-primary:hover { background: var(--primary-600); transform: translateY(-1px); }
+      .btn-secondary:hover, .btn-ghost:hover, .btn-ghost-full:hover { color: var(--text); background: var(--surface-hover); }
+      .hole-chip:hover { color: var(--text); border-color: #31453a; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -848,18 +494,7 @@
       </div>
 
       <button class="btn-ghost" id="backBtn" type="button" hidden>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          focusable="false"
-        >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M15 18l-6-6 6-6"></path>
         </svg>
         Back
@@ -873,26 +508,13 @@
       <article class="card">
         <div class="card-header">
           <div>
-            <h1 class="card-title view-heading" id="coursesTitle" tabindex="-1">
-              My Courses
-            </h1>
+            <h1 class="card-title view-heading" id="coursesTitle" tabindex="-1">My Courses</h1>
             <p class="card-subtitle">Build your strategy for each round</p>
           </div>
 
           <div class="header-actions">
             <button class="btn btn-primary" id="addCourseBtn" type="button">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-                focusable="false"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="M12 5v14M5 12h14"></path>
               </svg>
               Add Course
@@ -902,51 +524,21 @@
 
         <div class="card-body overview">
           <div class="stats-grid" aria-label="Planning statistics">
-            <div class="stat">
-              <span class="stat-value" id="statsCourses">0</span>
-              <span class="stat-label">Courses</span>
-            </div>
-
-            <div class="stat">
-              <span class="stat-value" id="statsPlanned">0</span>
-              <span class="stat-label">Holes Planned</span>
-            </div>
-
-            <div class="stat">
-              <span class="stat-value" id="statsCompletion">0%</span>
-              <span class="stat-label">Complete</span>
-            </div>
+            <div class="stat"><span class="stat-value" id="statsCourses">0</span><span class="stat-label">Courses</span></div>
+            <div class="stat"><span class="stat-value" id="statsPlanned">0</span><span class="stat-label">Holes Planned</span></div>
+            <div class="stat"><span class="stat-value" id="statsCompletion">0%</span><span class="stat-label">Complete</span></div>
           </div>
 
           <div class="search-row">
             <label class="sr-only" for="courseSearch">Search courses</label>
-            <input
-              type="search"
-              id="courseSearch"
-              placeholder="Search by course or location"
-              autocomplete="off"
-              enterkeyhint="search"
-            >
-            <button class="btn btn-secondary" id="clearSearchBtn" type="button" hidden>
-              Clear
-            </button>
+            <input type="search" id="courseSearch" placeholder="Search by course or location" autocomplete="off" enterkeyhint="search">
+            <button class="btn btn-secondary" id="clearSearchBtn" type="button" hidden>Clear</button>
           </div>
 
           <div class="tools-row" aria-label="Data tools">
-            <button class="btn btn-secondary" id="exportBtn" type="button">
-              Export Backup
-            </button>
-
-            <button class="btn btn-secondary" id="importBtn" type="button">
-              Import Backup
-            </button>
-
-            <input
-              type="file"
-              id="importFile"
-              accept="application/json,.json"
-              hidden
-            >
+            <button class="btn btn-secondary" id="exportBtn" type="button">Export Backup</button>
+            <button class="btn btn-secondary" id="importBtn" type="button">Import Backup</button>
+            <input type="file" id="importFile" accept="application/json,.json" hidden>
           </div>
         </div>
 
@@ -954,9 +546,7 @@
 
         <div class="empty-state" id="coursesEmpty" hidden>
           <h2 id="coursesEmptyTitle">No courses yet</h2>
-          <p id="coursesEmptyText">
-            Add your first course to start planning hole by hole.
-          </p>
+          <p id="coursesEmptyText">Add your first course to start planning hole by hole.</p>
         </div>
       </article>
     </section>
@@ -966,22 +556,15 @@
       <article class="card">
         <div class="card-header">
           <div>
-            <h1 class="card-title view-heading" id="courseTitle" tabindex="-1">
-              Course
-            </h1>
+            <h1 class="card-title view-heading" id="courseTitle" tabindex="-1">Course</h1>
             <p class="card-subtitle" id="courseMeta">Course details</p>
           </div>
         </div>
 
         <div class="card-body">
           <div class="progress-summary">
-            <div class="progress-label">
-              <span>Planning progress</span>
-              <strong id="courseProgressText">0 of 0 holes</strong>
-            </div>
-            <progress id="courseProgress" value="0" max="1">
-              0%
-            </progress>
+            <div class="progress-label"><span>Planning progress</span><strong id="courseProgressText">0 of 0 holes</strong></div>
+            <progress id="courseProgress" value="0" max="1">0%</progress>
           </div>
 
           <div class="course-notes-panel" id="courseNotesPanel" hidden>
@@ -991,46 +574,31 @@
 
           <div class="row-between">
             <button class="btn btn-primary" id="editCourseBtn" type="button">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-                focusable="false"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="M12 20h9"></path>
                 <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4z"></path>
               </svg>
               Edit Course
             </button>
-
-            <button class="btn btn-danger" id="deleteCourseBtn" type="button">
-              Delete Course
-            </button>
+            <button class="btn btn-danger" id="deleteCourseBtn" type="button">Delete Course</button>
           </div>
 
           <div class="row-between">
             <button class="btn btn-primary" id="startRoundBtn" type="button" style="flex:1;">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-                focusable="false"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="M5 3l14 9-14 9V3z"></path>
               </svg>
               Start Round
+            </button>
+          </div>
+
+          <div class="row-between">
+            <button class="btn btn-secondary" id="historyBtn" type="button" style="flex:1;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 3"></path>
+              </svg>
+              Round History
             </button>
           </div>
         </div>
@@ -1046,12 +614,8 @@
         <article class="card">
           <div class="card-header">
             <div>
-              <h1 class="card-title view-heading" id="holeTitle" tabindex="-1">
-                Hole 1
-              </h1>
-              <p class="card-subtitle" id="holeQuickMeta">
-                Add your strategy
-              </p>
+              <h1 class="card-title view-heading" id="holeTitle" tabindex="-1">Hole 1</h1>
+              <p class="card-subtitle" id="holeQuickMeta">Add your strategy</p>
             </div>
           </div>
 
@@ -1061,16 +625,8 @@
             <div class="form-grid">
               <div class="field">
                 <label for="holeNumber">Hole #</label>
-                <input
-                  type="number"
-                  id="holeNumber"
-                  min="1"
-                  max="36"
-                  readonly
-                  aria-readonly="true"
-                >
+                <input type="number" id="holeNumber" min="1" max="36" readonly aria-readonly="true">
               </div>
-
               <div class="field">
                 <label for="holePar">Par</label>
                 <select id="holePar">
@@ -1079,46 +635,18 @@
                   <option value="5">5</option>
                 </select>
               </div>
-
               <div class="field">
                 <label for="holeYardage">Total Yardage</label>
-                <input
-                  type="number"
-                  inputmode="numeric"
-                  id="holeYardage"
-                  min="1"
-                  max="9999"
-                  step="1"
-                  placeholder="e.g. 380"
-                >
+                <input type="number" inputmode="numeric" id="holeYardage" min="1" max="9999" step="1" placeholder="e.g. 380">
               </div>
-
               <div class="field">
                 <label for="holeTee">Tee Yardage (optional)</label>
-                <input
-                  type="number"
-                  inputmode="numeric"
-                  id="holeTee"
-                  min="1"
-                  max="9999"
-                  step="1"
-                  placeholder="e.g. 365"
-                >
+                <input type="number" inputmode="numeric" id="holeTee" min="1" max="9999" step="1" placeholder="e.g. 365">
               </div>
-
               <div class="field">
                 <label for="holeLayup">Layup Distance (optional)</label>
-                <input
-                  type="number"
-                  inputmode="numeric"
-                  id="holeLayup"
-                  min="1"
-                  max="9999"
-                  step="1"
-                  placeholder="e.g. 250"
-                >
+                <input type="number" inputmode="numeric" id="holeLayup" min="1" max="9999" step="1" placeholder="e.g. 250">
               </div>
-
               <div class="field">
                 <label for="holeDogleg">Dogleg</label>
                 <select id="holeDogleg">
@@ -1127,15 +655,9 @@
                   <option value="right">Right</option>
                 </select>
               </div>
-
               <div class="field full">
                 <label for="holeHazards">Hazards</label>
-                <textarea
-                  id="holeHazards"
-                  maxlength="1500"
-                  placeholder="e.g. Water left off tee, bunker front right of green"
-                  rows="2"
-                ></textarea>
+                <textarea id="holeHazards" maxlength="1500" placeholder="e.g. Water left off tee, bunker front right of green" rows="2"></textarea>
               </div>
             </div>
           </div>
@@ -1143,99 +665,28 @@
 
         <article class="card">
           <div class="card-header">
-            <div>
-              <h2 class="card-title">Tee Shot Strategy</h2>
-              <p class="card-subtitle">Shape, target and margin of error</p>
-            </div>
+            <div><h2 class="card-title">Tee Shot Strategy</h2><p class="card-subtitle">Shape, target and margin of error</p></div>
           </div>
-
           <div class="card-body">
-            <div class="field full">
-              <label for="teeTarget">Ideal Target / Landing Zone</label>
-              <textarea
-                id="teeTarget"
-                maxlength="1500"
-                placeholder="e.g. Right side of fairway to open up approach"
-                rows="2"
-              ></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="teeSafe">Safe Play</label>
-              <textarea
-                id="teeSafe"
-                maxlength="1500"
-                placeholder="e.g. Hit 3-wood down left centre, avoid the creek"
-                rows="2"
-              ></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="teeAggressive">Go For It / Risky</label>
-              <textarea
-                id="teeAggressive"
-                maxlength="1500"
-                placeholder="e.g. Driver over corner if downwind"
-                rows="2"
-              ></textarea>
-            </div>
+            <div class="field full"><label for="teeTarget">Ideal Target / Landing Zone</label><textarea id="teeTarget" maxlength="1500" placeholder="e.g. Right side of fairway to open up approach" rows="2"></textarea></div>
+            <div class="field full"><label for="teeSafe">Safe Play</label><textarea id="teeSafe" maxlength="1500" placeholder="e.g. Hit 3-wood down left centre, avoid the creek" rows="2"></textarea></div>
+            <div class="field full"><label for="teeAggressive">Go For It / Risky</label><textarea id="teeAggressive" maxlength="1500" placeholder="e.g. Driver over corner if downwind" rows="2"></textarea></div>
           </div>
         </article>
 
         <article class="card">
           <div class="card-header">
-            <div>
-              <h2 class="card-title">Approach &amp; Green</h2>
-              <p class="card-subtitle">
-                Distances, clubs and trouble to avoid
-              </p>
-            </div>
+            <div><h2 class="card-title">Approach &amp; Green</h2><p class="card-subtitle">Distances, clubs and trouble to avoid</p></div>
           </div>
-
           <div class="card-body">
-            <div class="field full">
-              <label for="approachPlan">Approach Strategy</label>
-              <textarea
-                id="approachPlan"
-                maxlength="1500"
-                placeholder="e.g. Aim middle of green, avoid short siding right"
-                rows="2"
-              ></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="missZone">Preferred Miss</label>
-              <textarea
-                id="missZone"
-                maxlength="1500"
-                placeholder="e.g. Miss long and left—better than the bunker"
-                rows="2"
-              ></textarea>
-            </div>
+            <div class="field full"><label for="approachPlan">Approach Strategy</label><textarea id="approachPlan" maxlength="1500" placeholder="e.g. Aim middle of green, avoid short siding right" rows="2"></textarea></div>
+            <div class="field full"><label for="missZone">Preferred Miss</label><textarea id="missZone" maxlength="1500" placeholder="e.g. Miss long and left—better than the bunker" rows="2"></textarea></div>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-header">
-            <div>
-              <h2 class="card-title">Hole Notes</h2>
-              <p class="card-subtitle">
-                Wind, pin positions and personal cues
-              </p>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <div class="field full">
-              <label for="holeNotes">Notes</label>
-              <textarea
-                id="holeNotes"
-                maxlength="2500"
-                placeholder="e.g. Front pin = land short, crosswind into green"
-                rows="3"
-              ></textarea>
-            </div>
-          </div>
+          <div class="card-header"><div><h2 class="card-title">Hole Notes</h2><p class="card-subtitle">Wind, pin positions and personal cues</p></div></div>
+          <div class="card-body"><div class="field full"><label for="holeNotes">Notes</label><textarea id="holeNotes" maxlength="2500" placeholder="e.g. Front pin = land short, crosswind into green" rows="3"></textarea></div></div>
         </article>
       </form>
     </section>
@@ -1245,59 +696,18 @@
       <form id="roundForm" class="stack-form">
         <article class="card">
           <div class="card-header">
-            <div>
-              <h1 class="card-title view-heading" id="roundTitle" tabindex="-1">
-                Round Scoring
-              </h1>
-              <p class="card-subtitle" id="roundMeta">Hole • Par</p>
-            </div>
+            <div><h1 class="card-title view-heading" id="roundTitle" tabindex="-1">Round Scoring</h1><p class="card-subtitle" id="roundMeta">Hole • Par</p></div>
           </div>
 
           <nav class="holes-nav" id="roundHoleNav" aria-label="Choose a hole"></nav>
 
           <div class="card-body">
             <div class="form-grid">
-              <div class="field">
-                <label for="roundHoleNumber">Hole #</label>
-                <input type="number" id="roundHoleNumber" readonly aria-readonly="true">
-              </div>
-
-              <div class="field">
-                <label for="roundPar">Par</label>
-                <input type="number" id="roundPar" readonly aria-readonly="true">
-              </div>
-
-              <div class="field">
-                <label for="roundYardage">Yardage</label>
-                <input type="text" id="roundYardage" readonly aria-readonly="true">
-              </div>
-
-              <div class="field">
-                <label for="roundStrokes">Score (Strokes)</label>
-                <input
-                  type="number"
-                  inputmode="numeric"
-                  id="roundStrokes"
-                  min="1"
-                  max="30"
-                  step="1"
-                  placeholder="e.g. 4"
-                >
-              </div>
-
-              <div class="field">
-                <label for="roundPutts">Putts</label>
-                <input
-                  type="number"
-                  inputmode="numeric"
-                  id="roundPutts"
-                  min="0"
-                  max="10"
-                  step="1"
-                  placeholder="e.g. 2"
-                >
-              </div>
-
+              <div class="field"><label for="roundHoleNumber">Hole #</label><input type="number" id="roundHoleNumber" readonly aria-readonly="true"></div>
+              <div class="field"><label for="roundPar">Par</label><input type="number" id="roundPar" readonly aria-readonly="true"></div>
+              <div class="field"><label for="roundYardage">Yardage</label><input type="text" id="roundYardage" readonly aria-readonly="true"></div>
+              <div class="field"><label for="roundStrokes">Score (Strokes)</label><input type="number" inputmode="numeric" id="roundStrokes" min="1" max="30" step="1" placeholder="e.g. 4"></div>
+              <div class="field"><label for="roundPutts">Putts</label><input type="number" inputmode="numeric" id="roundPutts" min="0" max="10" step="1" placeholder="e.g. 2"></div>
               <div class="field">
                 <label for="roundFairway">Fairway</label>
                 <select id="roundFairway">
@@ -1308,7 +718,6 @@
                   <option value="na">N/A (Par 3)</option>
                 </select>
               </div>
-
               <div class="field">
                 <label for="roundGIR">Green in Regulation</label>
                 <select id="roundGIR">
@@ -1317,185 +726,137 @@
                   <option value="no">No</option>
                 </select>
               </div>
-
-              <div class="field full">
-                <label for="roundComments">Round Comments</label>
-                <textarea
-                  id="roundComments"
-                  maxlength="1000"
-                  placeholder="e.g. Pushed drive right, good up-and-down"
-                  rows="3"
-                ></textarea>
-              </div>
+              <div class="field full"><label for="roundComments">Round Comments</label><textarea id="roundComments" maxlength="1000" placeholder="e.g. Pushed drive right, good up-and-down" rows="3"></textarea></div>
             </div>
           </div>
         </article>
 
-        <!-- Hole Strategy Display -->
         <article class="card">
           <div class="card-header">
-            <div>
-              <h2 class="card-title">Hole Strategy</h2>
-              <p class="card-subtitle">Review and update your plan</p>
-            </div>
+            <div><h2 class="card-title">Hole Strategy</h2><p class="card-subtitle">Review and update your plan</p></div>
             <button class="btn btn-secondary" id="editPlanFromRoundBtn" type="button">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-                focusable="false"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="M12 20h9"></path>
                 <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4z"></path>
               </svg>
               Edit Plan
             </button>
           </div>
-          <div class="card-body" id="roundStrategyBody">
-            <!-- Populated by JS -->
-          </div>
+          <div class="card-body" id="roundStrategyBody"></div>
         </article>
 
         <article class="card">
-          <div class="card-header">
-            <div>
-              <h2 class="card-title">Round Summary</h2>
-              <p class="card-subtitle">Live totals as you enter scores</p>
-            </div>
-          </div>
-
+          <div class="card-header"><div><h2 class="card-title">Round Summary</h2><p class="card-subtitle">Live totals as you enter scores</p></div></div>
           <div class="card-body">
             <div class="stats-grid" aria-label="Round statistics">
-              <div class="stat">
-                <span class="stat-value" id="roundTotalStrokes">–</span>
-                <span class="stat-label">Total Strokes</span>
-              </div>
-
-              <div class="stat">
-                <span class="stat-value" id="roundTotalToPar">E</span>
-                <span class="stat-label">To Par</span>
-              </div>
-
-              <div class="stat">
-                <span class="stat-value" id="roundHolesPlayed">0</span>
-                <span class="stat-label">Holes Played</span>
-              </div>
+              <div class="stat"><span class="stat-value" id="roundTotalStrokes">–</span><span class="stat-label">Total Strokes</span></div>
+              <div class="stat"><span class="stat-value" id="roundTotalToPar">E</span><span class="stat-label">To Par</span></div>
+              <div class="stat"><span class="stat-value" id="roundHolesPlayed">0</span><span class="stat-label">Holes Played</span></div>
             </div>
           </div>
         </article>
       </form>
     </section>
 
+    <!-- Round history -->
+    <section class="view" data-view="history" aria-labelledby="historyTitle">
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h1 class="card-title view-heading" id="historyTitle" tabindex="-1">Round History</h1>
+            <p class="card-subtitle" id="historySubtitle">Past rounds for this course</p>
+          </div>
+        </div>
+
+        <div class="list" id="historyList"></div>
+
+        <div class="empty-state" id="historyEmpty" hidden>
+          <h3>No rounds recorded yet</h3>
+          <p>Start a round from the course page and it will show up here once saved.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Round detail (read-only scorecard) -->
+    <section class="view" data-view="roundDetail" aria-labelledby="roundDetailTitle">
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h1 class="card-title view-heading" id="roundDetailTitle" tabindex="-1">Round</h1>
+            <p class="card-subtitle" id="roundDetailMeta">Date • Status</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="scorecard-wrap">
+            <table class="scorecard">
+              <thead>
+                <tr>
+                  <th>Hole</th>
+                  <th>Par</th>
+                  <th>Yds</th>
+                  <th>Score</th>
+                  <th>Putts</th>
+                  <th>Fairway</th>
+                  <th>GIR</th>
+                </tr>
+              </thead>
+              <tbody id="scorecardBody"></tbody>
+              <tfoot id="scorecardFoot"></tfoot>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" id="roundCommentsCard" hidden>
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Hole Comments</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="round-comments-list" id="roundCommentsList"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="row-between">
+            <button class="btn btn-secondary" id="resumeRoundBtn" type="button" style="flex:1;" hidden>
+              Resume Round
+            </button>
+            <button class="btn btn-danger" id="deleteRoundBtn" type="button">
+              Delete Round
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <!-- Course editor -->
     <section class="view" data-view="courseEdit" aria-labelledby="courseEditTitle">
       <article class="card">
         <div class="card-header">
-          <div>
-            <h1 class="card-title view-heading" id="courseEditTitle" tabindex="-1">
-              Add Course
-            </h1>
-            <p class="card-subtitle">
-              Name, par, yardage and number of holes
-            </p>
-          </div>
+          <div><h1 class="card-title view-heading" id="courseEditTitle" tabindex="-1">Add Course</h1><p class="card-subtitle">Name, par, yardage and number of holes</p></div>
         </div>
 
         <form id="courseForm" class="card-body">
           <div class="form-grid">
             <div class="field full">
               <label for="courseName">Course Name</label>
-              <input
-                type="text"
-                id="courseName"
-                maxlength="100"
-                placeholder="e.g. Old Course"
-                autocomplete="off"
-                required
-                aria-describedby="courseNameError"
-              >
+              <input type="text" id="courseName" maxlength="100" placeholder="e.g. Old Course" autocomplete="off" required aria-describedby="courseNameError">
               <p class="field-error" id="courseNameError" role="alert" hidden></p>
             </div>
-
-            <div class="field">
-              <label for="courseHoles">Number of Holes</label>
-              <input
-                type="number"
-                inputmode="numeric"
-                id="courseHoles"
-                min="1"
-                max="36"
-                step="1"
-                value="18"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="coursePar">Par (optional)</label>
-              <input
-                type="number"
-                inputmode="numeric"
-                id="coursePar"
-                min="1"
-                max="200"
-                step="1"
-                placeholder="e.g. 72"
-              >
-            </div>
-
-            <div class="field">
-              <label for="courseYards">Total Yardage (optional)</label>
-              <input
-                type="number"
-                inputmode="numeric"
-                id="courseYards"
-                min="1"
-                max="50000"
-                step="1"
-                placeholder="e.g. 6500"
-              >
-            </div>
-
-            <div class="field full">
-              <label for="courseLocation">Location (optional)</label>
-              <input
-                type="text"
-                id="courseLocation"
-                maxlength="150"
-                placeholder="e.g. St Andrews, Scotland"
-                autocomplete="off"
-              >
-            </div>
-
-            <div class="field full">
-              <label for="courseNotes">Course Notes (optional)</label>
-              <textarea
-                id="courseNotes"
-                maxlength="2500"
-                placeholder="e.g. Links, firm, wind usually SW"
-                rows="3"
-              ></textarea>
-            </div>
+            <div class="field"><label for="courseHoles">Number of Holes</label><input type="number" inputmode="numeric" id="courseHoles" min="1" max="36" step="1" value="18" required></div>
+            <div class="field"><label for="coursePar">Par (optional)</label><input type="number" inputmode="numeric" id="coursePar" min="1" max="200" step="1" placeholder="e.g. 72"></div>
+            <div class="field"><label for="courseYards">Total Yardage (optional)</label><input type="number" inputmode="numeric" id="courseYards" min="1" max="50000" step="1" placeholder="e.g. 6500"></div>
+            <div class="field full"><label for="courseLocation">Location (optional)</label><input type="text" id="courseLocation" maxlength="150" placeholder="e.g. St Andrews, Scotland" autocomplete="off"></div>
+            <div class="field full"><label for="courseNotes">Course Notes (optional)</label><textarea id="courseNotes" maxlength="2500" placeholder="e.g. Links, firm, wind usually SW" rows="3"></textarea></div>
           </div>
 
           <div class="form-actions">
-            <button
-              class="btn btn-ghost-full"
-              id="cancelCourseEdit"
-              type="button"
-            >
-              Cancel
-            </button>
-
-            <button class="btn btn-primary" id="saveCourseBtn" type="submit">
-              Save Course
-            </button>
+            <button class="btn btn-ghost-full" id="cancelCourseEdit" type="button">Cancel</button>
+            <button class="btn btn-primary" id="saveCourseBtn" type="submit">Save Course</button>
           </div>
         </form>
       </article>
@@ -1503,25 +864,8 @@
   </main>
 
   <div class="footer-actions" id="saveHoleBar" hidden>
-    <button
-      class="btn btn-primary"
-      id="saveHoleBtn"
-      type="submit"
-      form="holeForm"
-      data-save-state="idle"
-    >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-        focusable="false"
-      >
+    <button class="btn btn-primary" id="saveHoleBtn" type="submit" form="holeForm" data-save-state="idle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
         <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"></path>
         <polyline points="17 21 17 13 7 13 7 21"></polyline>
         <polyline points="7 3 7 8 15 8"></polyline>
@@ -1532,29 +876,9 @@
 
   <div class="footer-actions" id="roundBar" hidden>
     <div class="footer-split">
-      <button class="btn btn-secondary" id="finishRoundBtn" type="button">
-        Finish Round
-      </button>
-
-      <button
-        class="btn btn-primary"
-        id="saveRoundHoleBtn"
-        type="submit"
-        form="roundForm"
-        data-save-state="idle"
-      >
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          focusable="false"
-        >
+      <button class="btn btn-secondary" id="finishRoundBtn" type="button">Finish Round</button>
+      <button class="btn btn-primary" id="saveRoundHoleBtn" type="submit" form="roundForm" data-save-state="idle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"></path>
           <polyline points="17 21 17 13 7 13 7 21"></polyline>
           <polyline points="7 3 7 8 15 8"></polyline>
@@ -1581,26 +905,12 @@
     const MAX_HOLES = 36;
     const MAX_ROUNDS = 500;
 
-    const STRATEGY_FIELDS = [
-      "hazards",
-      "teeTarget",
-      "teeSafe",
-      "teeAggressive",
-      "approachPlan",
-      "missZone",
-      "notes"
-    ];
+    const STRATEGY_FIELDS = ["hazards", "teeTarget", "teeSafe", "teeAggressive", "approachPlan", "missZone", "notes"];
 
     let state = {
-      courses: [],
-      rounds: [],
-      activeCourseId: null,
-      activeHoleIndex: 0,
-      activeRoundId: null,
-      activeRoundHoleIndex: 0,
-      editingCourseId: null,
-      view: "courses",
-      navDepth: 0
+      courses: [], rounds: [], activeCourseId: null, activeHoleIndex: 0,
+      activeRoundId: null, activeRoundHoleIndex: 0, editingCourseId: null,
+      view: "courses", navDepth: 0
     };
 
     let holeDirty = false;
@@ -1612,8 +922,6 @@
     let toastTransitionTimer = null;
     let startupWarning = "";
     let migratedLegacyData = false;
-
-    history.scrollRestoration = "manual";
 
     const views = [...document.querySelectorAll(".view")];
 
@@ -1688,6 +996,21 @@
     const editPlanFromRoundBtn = document.getElementById("editPlanFromRoundBtn");
     const roundStrategyBody = document.getElementById("roundStrategyBody");
 
+    const historyTitle = document.getElementById("historyTitle");
+    const historySubtitle = document.getElementById("historySubtitle");
+    const historyList = document.getElementById("historyList");
+    const historyEmpty = document.getElementById("historyEmpty");
+    const historyBtn = document.getElementById("historyBtn");
+
+    const roundDetailTitle = document.getElementById("roundDetailTitle");
+    const roundDetailMeta = document.getElementById("roundDetailMeta");
+    const scorecardBody = document.getElementById("scorecardBody");
+    const scorecardFoot = document.getElementById("scorecardFoot");
+    const roundCommentsCard = document.getElementById("roundCommentsCard");
+    const roundCommentsList = document.getElementById("roundCommentsList");
+    const resumeRoundBtn = document.getElementById("resumeRoundBtn");
+    const deleteRoundBtn = document.getElementById("deleteRoundBtn");
+
     const courseForm = document.getElementById("courseForm");
     const courseEditTitle = document.getElementById("courseEditTitle");
     const courseName = document.getElementById("courseName");
@@ -1705,89 +1028,38 @@
     const liveStatus = document.getElementById("liveStatus");
 
     function uid() {
-      if (
-        window.crypto &&
-        typeof window.crypto.randomUUID === "function"
-      ) {
+      if (window.crypto && typeof window.crypto.randomUUID === "function") {
         return window.crypto.randomUUID();
       }
-
-      return (
-        Date.now().toString(36) +
-        Math.random().toString(36).slice(2, 10)
-      );
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
     }
 
     function debounce(fn, delay = 300) {
       let timer = null;
-
       const wrapped = (...args) => {
         window.clearTimeout(timer);
         timer = window.setTimeout(() => fn(...args), delay);
       };
-
-      wrapped.cancel = () => {
-        window.clearTimeout(timer);
-        timer = null;
-      };
-
+      wrapped.cancel = () => { window.clearTimeout(timer); timer = null; };
       return wrapped;
     }
 
     function clampInteger(value, min, max, fallback) {
       const number = Number(value);
-
-      if (!Number.isFinite(number)) {
-        return fallback;
-      }
-
+      if (!Number.isFinite(number)) return fallback;
       return Math.min(max, Math.max(min, Math.round(number)));
     }
 
     function safeText(value, maxLength = 2500) {
-      if (value === null || value === undefined) {
-        return "";
-      }
-
+      if (value === null || value === undefined) return "";
       return String(value).slice(0, maxLength);
     }
 
     function optionalInteger(value, min, max) {
-      if (
-        value === null ||
-        value === undefined ||
-        String(value).trim() === ""
-      ) {
-        return "";
-      }
-
+      if (value === null || value === undefined || String(value).trim() === "") return "";
       const number = Number(value);
-
-      if (!Number.isFinite(number) || number < min || number > max) {
-        return "";
-      }
-
+      if (!Number.isFinite(number) || number < min || number > max) return "";
       return String(Math.round(number));
-    }
-
-    function sanitizeNumberInput(value, min, max, fallback = "") {
-      if (
-        value === null ||
-        value === undefined ||
-        String(value).trim() === ""
-      ) {
-        return fallback;
-      }
-
-      const number = Number(value);
-
-      if (!Number.isFinite(number)) {
-        return fallback;
-      }
-
-      return String(
-        Math.min(max, Math.max(min, Math.round(number)))
-      );
     }
 
     function validTimestamp(value, fallback = Date.now()) {
@@ -1797,43 +1069,23 @@
 
     function createHole(number) {
       return {
-        number,
-        par: 4,
-        yardage: "",
-        teeYardage: "",
-        layup: "",
-        dogleg: "none",
-        hazards: "",
-        teeTarget: "",
-        teeSafe: "",
-        teeAggressive: "",
-        approachPlan: "",
-        missZone: "",
-        notes: ""
+        number, par: 4, yardage: "", teeYardage: "", layup: "", dogleg: "none",
+        hazards: "", teeTarget: "", teeSafe: "", teeAggressive: "",
+        approachPlan: "", missZone: "", notes: ""
       };
     }
 
     function createHoles(count) {
       const safeCount = clampInteger(count, 1, MAX_HOLES, 18);
-
-      return Array.from(
-        { length: safeCount },
-        (_, index) => createHole(index + 1)
-      );
+      return Array.from({ length: safeCount }, (_, index) => createHole(index + 1));
     }
 
     function normalizeHole(rawHole, index) {
-      const raw =
-        rawHole && typeof rawHole === "object" ? rawHole : {};
-
+      const raw = rawHole && typeof rawHole === "object" ? rawHole : {};
       const par = clampInteger(raw.par, 3, 5, 4);
-      const dogleg = ["none", "left", "right"].includes(raw.dogleg)
-        ? raw.dogleg
-        : "none";
-
+      const dogleg = ["none", "left", "right"].includes(raw.dogleg) ? raw.dogleg : "none";
       return {
-        number: index + 1,
-        par,
+        number: index + 1, par,
         yardage: optionalInteger(raw.yardage, 1, 9999),
         teeYardage: optionalInteger(raw.teeYardage, 1, 9999),
         layup: optionalInteger(raw.layup, 1, 9999),
@@ -1849,30 +1101,13 @@
     }
 
     function normalizeCourse(rawCourse) {
-      if (!rawCourse || typeof rawCourse !== "object") {
-        return null;
-      }
-
+      if (!rawCourse || typeof rawCourse !== "object") return null;
       const name = safeText(rawCourse.name, 100).trim();
+      if (!name) return null;
 
-      if (!name) {
-        return null;
-      }
-
-      const requestedHoleCount = clampInteger(
-        rawCourse.holeCount || rawCourse.numberOfHoles,
-        1,
-        MAX_HOLES,
-        18
-      );
-
-      const sourceHoles = Array.isArray(rawCourse.holes)
-        ? rawCourse.holes.slice(0, MAX_HOLES)
-        : [];
-
-      const holes = sourceHoles.length
-        ? sourceHoles.map(normalizeHole)
-        : createHoles(requestedHoleCount);
+      const requestedHoleCount = clampInteger(rawCourse.holeCount || rawCourse.numberOfHoles, 1, MAX_HOLES, 18);
+      const sourceHoles = Array.isArray(rawCourse.holes) ? rawCourse.holes.slice(0, MAX_HOLES) : [];
+      const holes = sourceHoles.length ? sourceHoles.map(normalizeHole) : createHoles(requestedHoleCount);
 
       return {
         id: safeText(rawCourse.id, 100).trim() || uid(),
@@ -1883,114 +1118,69 @@
         notes: safeText(rawCourse.notes, 2500).trim(),
         holes,
         createdAt: validTimestamp(rawCourse.createdAt),
-        updatedAt: validTimestamp(
-          rawCourse.updatedAt,
-          validTimestamp(rawCourse.createdAt)
-        )
+        updatedAt: validTimestamp(rawCourse.updatedAt, validTimestamp(rawCourse.createdAt))
       };
     }
 
     function normalizeCourses(rawCourses) {
-      if (!Array.isArray(rawCourses)) {
-        return [];
-      }
-
+      if (!Array.isArray(rawCourses)) return [];
       const seenIds = new Set();
-
-      return rawCourses
-        .slice(0, MAX_COURSES)
-        .map(normalizeCourse)
-        .filter(Boolean)
-        .map(course => {
-          if (seenIds.has(course.id)) {
-            course.id = uid();
-          }
-
-          seenIds.add(course.id);
-          return course;
-        });
+      return rawCourses.slice(0, MAX_COURSES).map(normalizeCourse).filter(Boolean).map(course => {
+        if (seenIds.has(course.id)) course.id = uid();
+        seenIds.add(course.id);
+        return course;
+      });
     }
 
     function normalizeRoundHole(rawHole, index) {
-      const raw =
-        rawHole && typeof rawHole === "object" ? rawHole : {};
-
+      const raw = rawHole && typeof rawHole === "object" ? rawHole : {};
       return {
         number: index + 1,
         par: clampInteger(raw.par, 3, 5, 4),
         yardage: safeText(raw.yardage, 20),
         strokes: optionalInteger(raw.strokes, 1, 30),
         putts: optionalInteger(raw.putts, 0, 10),
-        fairway: ["", "hit", "left", "right", "na"].includes(raw.fairway)
-          ? raw.fairway
-          : "",
+        fairway: ["", "hit", "left", "right", "na"].includes(raw.fairway) ? raw.fairway : "",
         gir: ["", "yes", "no"].includes(raw.gir) ? raw.gir : "",
         comments: safeText(raw.comments, 1000)
       };
     }
 
     function normalizeRound(rawRound) {
-      if (!rawRound || typeof rawRound !== "object") {
-        return null;
-      }
-
+      if (!rawRound || typeof rawRound !== "object") return null;
       const courseId = safeText(rawRound.courseId, 100).trim();
-
-      if (!courseId) {
-        return null;
-      }
-
-      const rawHoles = Array.isArray(rawRound.holes)
-        ? rawRound.holes.slice(0, MAX_HOLES)
-        : [];
-
+      if (!courseId) return null;
+      const rawHoles = Array.isArray(rawRound.holes) ? rawRound.holes.slice(0, MAX_HOLES) : [];
       return {
         id: safeText(rawRound.id, 100).trim() || uid(),
         courseId,
         courseName: safeText(rawRound.courseName, 100).trim(),
         date: validTimestamp(rawRound.date),
+        completedAt: rawRound.completedAt ? validTimestamp(rawRound.completedAt) : null,
         holes: rawHoles.map(normalizeRoundHole)
       };
     }
 
     function normalizeRounds(rawRounds) {
-      if (!Array.isArray(rawRounds)) {
-        return [];
-      }
-
-      return rawRounds
-        .slice(0, MAX_ROUNDS)
-        .map(normalizeRound)
-        .filter(Boolean);
+      if (!Array.isArray(rawRounds)) return [];
+      return rawRounds.slice(0, MAX_ROUNDS).map(normalizeRound).filter(Boolean);
     }
 
     function load() {
       try {
         let raw = localStorage.getItem(STORE_KEY);
-
         if (!raw) {
           raw = localStorage.getItem(LEGACY_STORE_KEY);
           migratedLegacyData = Boolean(raw);
         }
-
-        if (!raw) {
-          return;
-        }
-
+        if (!raw) return;
         const parsed = JSON.parse(raw);
-
-        if (!parsed || !Array.isArray(parsed.courses)) {
-          throw new Error("Invalid stored data format.");
-        }
-
+        if (!parsed || !Array.isArray(parsed.courses)) throw new Error("Invalid stored data format.");
         state.courses = normalizeCourses(parsed.courses);
-        state.rounds = Array.isArray(parsed.rounds)
-          ? normalizeRounds(parsed.rounds)
-          : [];
+        state.rounds = Array.isArray(parsed.rounds) ? normalizeRounds(parsed.rounds) : [];
       } catch (error) {
         console.warn("Failed to load ForePlan data", error);
-        startupWarning =
-          "Stored data could not be loaded. A new local collection was started.";
+        startupWarning = "Stored data could not be loaded. A new local collection was started.";
         state.courses = [];
         state.rounds = [];
       }
@@ -1998,15 +1188,7 @@
 
     function persist() {
       try {
-        localStorage.setItem(
-          STORE_KEY,
-          JSON.stringify({
-            version: DATA_VERSION,
-            courses: state.courses,
-            rounds: state.rounds
-          })
-        );
-
+        localStorage.setItem(STORE_KEY, JSON.stringify({ version: DATA_VERSION, courses: state.courses, rounds: state.rounds }));
         return true;
       } catch (error) {
         console.warn("Failed to save ForePlan data", error);
@@ -2014,99 +1196,46 @@
       }
     }
 
-    function getCourse(id) {
-      return state.courses.find(course => course.id === id);
-    }
-
-    function getActiveCourse() {
-      return getCourse(state.activeCourseId);
-    }
-
+    function getCourse(id) { return state.courses.find(course => course.id === id); }
+    function getActiveCourse() { return getCourse(state.activeCourseId); }
     function getActiveHole() {
       const course = getActiveCourse();
-
-      if (!course) {
-        return null;
-      }
-
+      if (!course) return null;
       return course.holes[state.activeHoleIndex] || null;
     }
-
-    function getRound(id) {
-      return state.rounds.find(round => round.id === id);
-    }
-
-    function getActiveRound() {
-      return getRound(state.activeRoundId);
-    }
-
+    function getRound(id) { return state.rounds.find(round => round.id === id); }
+    function getActiveRound() { return getRound(state.activeRoundId); }
     function getActiveRoundHole() {
       const round = getActiveRound();
-
-      if (!round) {
-        return null;
-      }
-
+      if (!round) return null;
       return round.holes[state.activeRoundHoleIndex] || null;
     }
 
     function isHolePlanned(hole) {
-      return STRATEGY_FIELDS.some(field => {
-        return safeText(hole[field]).trim().length > 0;
-      });
+      return STRATEGY_FIELDS.some(field => safeText(hole[field]).trim().length > 0);
     }
 
     function isHoleTouched(hole) {
-      return (
-        isHolePlanned(hole) ||
-        Boolean(hole.yardage) ||
-        Boolean(hole.teeYardage) ||
-        Boolean(hole.layup) ||
-        hole.dogleg !== "none" ||
-        Number(hole.par) !== 4
-      );
+      return isHolePlanned(hole) || Boolean(hole.yardage) || Boolean(hole.teeYardage) || Boolean(hole.layup) || hole.dogleg !== "none" || Number(hole.par) !== 4;
     }
 
-    function getPlannedHoleCount(course) {
-      return course.holes.filter(isHolePlanned).length;
-    }
+    function getPlannedHoleCount(course) { return course.holes.filter(isHolePlanned).length; }
 
     function getOverallStats() {
-      const totalHoles = state.courses.reduce(
-        (sum, course) => sum + course.holes.length,
-        0
-      );
-
-      const plannedHoles = state.courses.reduce(
-        (sum, course) => sum + getPlannedHoleCount(course),
-        0
-      );
-
-      return {
-        courses: state.courses.length,
-        totalHoles,
-        plannedHoles,
-        completion:
-          totalHoles > 0
-            ? Math.round((plannedHoles / totalHoles) * 100)
-            : 0
-      };
+      const totalHoles = state.courses.reduce((sum, course) => sum + course.holes.length, 0);
+      const plannedHoles = state.courses.reduce((sum, course) => sum + getPlannedHoleCount(course), 0);
+      return { courses: state.courses.length, totalHoles, plannedHoles, completion: totalHoles > 0 ? Math.round((plannedHoles / totalHoles) * 100) : 0 };
     }
 
     function announce(message) {
       liveStatus.textContent = "";
-
-      window.setTimeout(() => {
-        liveStatus.textContent = message;
-      }, 30);
+      window.setTimeout(() => { liveStatus.textContent = message; }, 30);
     }
 
     function hideToast() {
       window.clearTimeout(toastDismissTimer);
       window.clearTimeout(toastTransitionTimer);
-
       toast.classList.remove("active");
-
       toastTransitionTimer = window.setTimeout(() => {
         toast.hidden = true;
         toast.className = "toast";
@@ -2116,41 +1245,23 @@
       }, 190);
     }
 
-    function showToast(
-      message,
-      {
-        type = "success",
-        duration = 3200,
-        actionLabel = "",
-        onAction = null
-      } = {}
-    ) {
+    function showToast(message, { type = "success", duration = 3200, actionLabel = "", onAction = null } = {}) {
       window.clearTimeout(toastDismissTimer);
       window.clearTimeout(toastTransitionTimer);
-
       toast.hidden = false;
       toast.className = `toast ${type}`;
       toastMessage.textContent = message;
-
       if (actionLabel && typeof onAction === "function") {
         toastAction.hidden = false;
         toastAction.textContent = actionLabel;
-        toastAction.onclick = () => {
-          hideToast();
-          onAction();
-        };
+        toastAction.onclick = () => { hideToast(); onAction(); };
       } else {
         toastAction.hidden = true;
         toastAction.textContent = "";
         toastAction.onclick = null;
       }
-
-      requestAnimationFrame(() => {
-        toast.classList.add("active");
-      });
-
+      requestAnimationFrame(() => { toast.classList.add("active"); });
       announce(message);
-
       toastDismissTimer = window.setTimeout(hideToast, duration);
     }
 
@@ -2158,23 +1269,7 @@
       const wrapper = document.createElement("span");
       wrapper.className = "chevron";
       wrapper.setAttribute("aria-hidden", "true");
-
-      wrapper.innerHTML = `
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          focusable="false"
-        >
-          <path d="M9 18l6-6-6-6"></path>
-        </svg>
-      `;
-
+      wrapper.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M9 18l6-6-6-6"></path></svg>`;
       return wrapper;
     }
 
@@ -2188,222 +1283,102 @@
     function appendStrategyField(container, label, value) {
       const item = document.createElement("div");
       item.className = "strategy-item";
-
       const labelEl = document.createElement("span");
       labelEl.className = "strategy-label";
       labelEl.textContent = label;
-
       const valueEl = document.createElement("p");
       valueEl.className = "strategy-value";
       valueEl.textContent = value;
-
       item.append(labelEl, valueEl);
       container.appendChild(item);
     }
 
     function renderRoundStrategy(courseHole) {
       roundStrategyBody.replaceChildren();
-
-      if (!courseHole) {
-        const empty = document.createElement("p");
-        empty.className = "strategy-value";
-        empty.textContent = "This hole is not in the current course plan.";
-        roundStrategyBody.appendChild(empty);
-        return;
-      }
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Par",
-        String(courseHole.par)
-      );
-
-      if (courseHole.yardage) {
-        appendStrategyField(
-          roundStrategyBody,
-          "Yardage",
-          `${courseHole.yardage} yds`
-        );
-      }
-
-      if (courseHole.dogleg !== "none") {
-        appendStrategyField(
-          roundStrategyBody,
-          "Dogleg",
-          courseHole.dogleg.charAt(0).toUpperCase() +
-            courseHole.dogleg.slice(1)
-        );
-      }
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Hazards",
-        courseHole.hazards || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Ideal Target / Landing Zone",
-        courseHole.teeTarget || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Safe Play",
-        courseHole.teeSafe || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Go For It / Risky",
-        courseHole.teeAggressive || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Approach Strategy",
-        courseHole.approachPlan || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Preferred Miss",
-        courseHole.missZone || "Not set"
-      );
-
-      appendStrategyField(
-        roundStrategyBody,
-        "Notes",
-        courseHole.notes || "Not set"
-      );
+      if (!courseHole) return;
+      appendStrategyField(roundStrategyBody, "Par", String(courseHole.par));
+      if (courseHole.yardage) appendStrategyField(roundStrategyBody, "Yardage", `${courseHole.yardage} yds`);
+      if (courseHole.dogleg !== "none") appendStrategyField(roundStrategyBody, "Dogleg", courseHole.dogleg.charAt(0).toUpperCase() + courseHole.dogleg.slice(1));
+      appendStrategyField(roundStrategyBody, "Hazards", courseHole.hazards || "Not set");
+      appendStrategyField(roundStrategyBody, "Ideal Target / Landing Zone", courseHole.teeTarget || "Not set");
+      appendStrategyField(roundStrategyBody, "Safe Play", courseHole.teeSafe || "Not set");
+      appendStrategyField(roundStrategyBody, "Go For It / Risky", courseHole.teeAggressive || "Not set");
+      appendStrategyField(roundStrategyBody, "Approach Strategy", courseHole.approachPlan || "Not set");
+      appendStrategyField(roundStrategyBody, "Preferred Miss", courseHole.missZone || "Not set");
+      appendStrategyField(roundStrategyBody, "Notes", courseHole.notes || "Not set");
     }
 
     function routeSnapshot() {
       return {
-        foreplan: true,
-        view: state.view,
-        activeCourseId: state.activeCourseId,
-        activeHoleIndex: state.activeHoleIndex,
-        activeRoundId: state.activeRoundId,
-        activeRoundHoleIndex: state.activeRoundHoleIndex,
-        editingCourseId: state.editingCourseId,
+        foreplan: true, view: state.view, activeCourseId: state.activeCourseId,
+        activeHoleIndex: state.activeHoleIndex, activeRoundId: state.activeRoundId,
+        activeRoundHoleIndex: state.activeRoundHoleIndex, editingCourseId: state.editingCourseId,
         navDepth: state.navDepth
       };
     }
 
     function normalizeRoute(route) {
-      const allowedViews = [
-        "courses",
-        "course",
-        "hole",
-        "courseEdit",
-        "round"
-      ];
-
-      let view = allowedViews.includes(route?.view)
-        ? route.view
-        : "courses";
-
-      let activeCourseId =
-        typeof route?.activeCourseId === "string"
-          ? route.activeCourseId
-          : null;
-
-      let editingCourseId =
-        typeof route?.editingCourseId === "string"
-          ? route.editingCourseId
-          : null;
-
-      let activeHoleIndex = clampInteger(
-        route?.activeHoleIndex,
-        0,
-        MAX_HOLES - 1,
-        0
-      );
-
-      let activeRoundId =
-        typeof route?.activeRoundId === "string"
-          ? route.activeRoundId
-          : null;
-
-      let activeRoundHoleIndex = clampInteger(
-        route?.activeRoundHoleIndex,
-        0,
-        MAX_HOLES - 1,
-        0
-      );
-
-      const navDepth = Math.max(
-        0,
-        clampInteger(route?.navDepth, 0, 1000, 0)
-      );
+      const allowedViews = ["courses", "course", "hole", "courseEdit", "round", "history", "roundDetail"];
+      let view = allowedViews.includes(route?.view) ? route.view : "courses";
+      let activeCourseId = typeof route?.activeCourseId === "string" ? route.activeCourseId : null;
+      let editingCourseId = typeof route?.editingCourseId === "string" ? route.editingCourseId : null;
+      let activeHoleIndex = clampInteger(route?.activeHoleIndex, 0, MAX_HOLES - 1, 0);
+      let activeRoundId = typeof route?.activeRoundId === "string" ? route.activeRoundId : null;
+      let activeRoundHoleIndex = clampInteger(route?.activeRoundHoleIndex, 0, MAX_HOLES - 1, 0);
+      const navDepth = Math.max(0, clampInteger(route?.navDepth, 0, 1000, 0));
 
       if (view === "courses") {
-        activeCourseId = null;
-        editingCourseId = null;
-        activeHoleIndex = 0;
-        activeRoundId = null;
-        activeRoundHoleIndex = 0;
+        activeCourseId = null; editingCourseId = null; activeHoleIndex = 0; activeRoundId = null; activeRoundHoleIndex = 0;
       }
 
       if (view === "course" || view === "hole") {
         const course = getCourse(activeCourseId);
-
         if (!course) {
-          view = "courses";
-          activeCourseId = null;
-          editingCourseId = null;
-          activeHoleIndex = 0;
-          activeRoundId = null;
-          activeRoundHoleIndex = 0;
+          view = "courses"; activeCourseId = null; editingCourseId = null; activeHoleIndex = 0; activeRoundId = null; activeRoundHoleIndex = 0;
         } else {
-          activeHoleIndex = Math.min(
-            activeHoleIndex,
-            course.holes.length - 1
-          );
-          editingCourseId = null;
-          activeRoundId = null;
+          activeHoleIndex = Math.min(activeHoleIndex, course.holes.length - 1);
+          editingCourseId = null; activeRoundId = null;
         }
       }
 
       if (view === "round") {
         const course = getCourse(activeCourseId);
         const round = getRound(activeRoundId);
-
         if (!course || !round || round.courseId !== course.id) {
           view = course ? "course" : "courses";
-          activeRoundId = null;
-          activeRoundHoleIndex = 0;
+          activeRoundId = null; activeRoundHoleIndex = 0;
         } else {
-          activeRoundHoleIndex = Math.min(
-            activeRoundHoleIndex,
-            round.holes.length - 1
-          );
+          activeRoundHoleIndex = Math.min(activeRoundHoleIndex, round.holes.length - 1);
           editingCourseId = null;
         }
+      }
+
+      if (view === "history") {
+        const course = getCourse(activeCourseId);
+        if (!course) {
+          view = "courses"; activeCourseId = null;
+        }
+        editingCourseId = null; activeRoundId = null;
+      }
+
+      if (view === "roundDetail") {
+        const round = getRound(activeRoundId);
+        const course = round ? getCourse(round.courseId) : null;
+        if (!round || !course) {
+          view = "courses"; activeCourseId = null; activeRoundId = null;
+        } else {
+          activeCourseId = course.id;
+        }
+        editingCourseId = null;
       }
 
       if (view === "courseEdit" && editingCourseId) {
         const course = getCourse(editingCourseId);
-
-        if (!course) {
-          view = "courses";
-          activeCourseId = null;
-          editingCourseId = null;
-        } else {
-          activeCourseId = editingCourseId;
-        }
+        if (!course) { view = "courses"; activeCourseId = null; editingCourseId = null; }
+        else { activeCourseId = editingCourseId; }
       }
 
-      return {
-        view,
-        activeCourseId,
-        activeHoleIndex,
-        activeRoundId,
-        activeRoundHoleIndex,
-        editingCourseId,
-        navDepth
-      };
+      return { view, activeCourseId, activeHoleIndex, activeRoundId, activeRoundHoleIndex, editingCourseId, navDepth };
     }
 
     function setViewUI(view) {
@@ -2418,68 +1393,37 @@
       roundBar.hidden = view !== "round";
 
       const backLabels = {
-        course: "Back to courses",
-        hole: "Back to course",
-        round: "Back to course",
-        courseEdit: state.editingCourseId
-          ? "Back to course"
-          : "Back to courses"
+        course: "Back to courses", hole: "Back to course", round: "Back to course",
+        history: "Back to course", roundDetail: "Back to history",
+        courseEdit: state.editingCourseId ? "Back to course" : "Back to courses"
       };
 
-      backBtn.setAttribute(
-        "aria-label",
-        backLabels[view] || "Go back"
-      );
+      backBtn.setAttribute("aria-label", backLabels[view] || "Go back");
     }
 
     function focusCurrentView() {
       window.scrollTo({ top: 0, behavior: "auto" });
-
       requestAnimationFrame(() => {
-        if (state.view === "courseEdit") {
-          courseName.focus({ preventScroll: true });
-          return;
-        }
-
-        const headings = {
-          courses: document.getElementById("coursesTitle"),
-          course: courseTitle,
-          hole: holeTitle,
-          round: roundTitle
-        };
-
+        if (state.view === "courseEdit") { courseName.focus({ preventScroll: true }); return; }
+        const headings = { courses: document.getElementById("coursesTitle"), course: courseTitle, hole: holeTitle, round: roundTitle, history: historyTitle, roundDetail: roundDetailTitle };
         headings[state.view]?.focus({ preventScroll: true });
       });
     }
 
     function renderActiveView() {
       switch (state.view) {
-        case "course":
-          renderCourse();
-          break;
-
-        case "hole":
-          renderHole();
-          break;
-
-        case "round":
-          renderRound();
-          break;
-
-        case "courseEdit":
-          renderCourseEditor();
-          break;
-
-        case "courses":
-        default:
-          renderCourses();
-          break;
+        case "course": renderCourse(); break;
+        case "hole": renderHole(); break;
+        case "round": renderRound(); break;
+        case "courseEdit": renderCourseEditor(); break;
+        case "history": renderHistory(); break;
+        case "roundDetail": renderRoundDetail(); break;
+        case "courses": default: renderCourses(); break;
       }
     }
 
     function applyRoute(route, { focus = true } = {}) {
       const normalized = normalizeRoute(route);
-
       state.view = normalized.view;
       state.activeCourseId = normalized.activeCourseId;
       state.activeHoleIndex = normalized.activeHoleIndex;
@@ -2487,200 +1431,94 @@
       state.activeRoundHoleIndex = normalized.activeRoundHoleIndex;
       state.editingCourseId = normalized.editingCourseId;
       state.navDepth = normalized.navDepth;
-
       setViewUI(state.view);
       renderActiveView();
-
-      if (focus) {
-        focusCurrentView();
-      }
+      if (focus) focusCurrentView();
     }
 
-    function makeRoute(
-      view,
-      {
-        courseId = null,
-        holeIndex = 0,
-        editingCourseId = null,
-        roundId = null
-      } = {}
-    ) {
-      return {
-        view,
-        activeCourseId: courseId,
-        activeHoleIndex: holeIndex,
-        activeRoundId: roundId,
-        editingCourseId
-      };
+    function makeRoute(view, { courseId = null, holeIndex = 0, editingCourseId = null, roundId = null } = {}) {
+      return { view, activeCourseId: courseId, activeHoleIndex: holeIndex, activeRoundId: roundId, editingCourseId };
     }
 
     function navigateTo(route, { replace = false } = {}) {
-      if (state.view === "hole") {
-        flushHoleDraft();
-      } else if (state.view === "round") {
-        flushRoundDraft();
-      }
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
 
-      const nextRoute = {
-        ...route,
-        navDepth: replace
-          ? state.navDepth
-          : state.navDepth + 1
-      };
-
+      const nextRoute = { ...route, navDepth: replace ? state.navDepth : state.navDepth + 1 };
       applyRoute(nextRoute);
-
       const method = replace ? "replaceState" : "pushState";
       history[method](routeSnapshot(), "", window.location.href);
     }
 
-    function replaceCurrentRoute() {
-      history.replaceState(
-        routeSnapshot(),
-        "",
-        window.location.href
-      );
-    }
+    function replaceCurrentRoute() { history.replaceState(routeSnapshot(), "", window.location.href); }
 
     function confirmDiscardCourseEdit() {
-      if (!courseEditDirty) {
-        return true;
-      }
-
-      return window.confirm(
-        "Discard your unsaved course changes?"
-      );
+      if (!courseEditDirty) return true;
+      return window.confirm("Discard your unsaved course changes?");
     }
 
     function goBack() {
-      if (
-        state.view === "courseEdit" &&
-        !confirmDiscardCourseEdit()
-      ) {
-        return;
-      }
-
+      if (state.view === "courseEdit" && !confirmDiscardCourseEdit()) return;
       courseEditDirty = false;
 
-      if (state.view === "hole") {
-        flushHoleDraft();
-      } else if (state.view === "round") {
-        flushRoundDraft();
-      }
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
 
-      if (state.navDepth > 0) {
-        history.back();
+      if (state.view === "history") { navigateTo(makeRoute("course", { courseId: state.activeCourseId }), { replace: true }); return; }
+
+      if (state.view === "roundDetail") {
+        const round = getActiveRound();
+        navigateTo(makeRoute("history", { courseId: round ? round.courseId : state.activeCourseId }), { replace: true });
         return;
       }
 
-      if (state.view === "hole") {
-        navigateTo(
-          makeRoute("course", {
-            courseId: state.activeCourseId
-          }),
-          { replace: true }
-        );
-        return;
-      }
+      if (state.navDepth > 0) { history.back(); return; }
 
-      if (state.view === "round") {
-        navigateTo(
-          makeRoute("course", {
-            courseId: state.activeCourseId
-          }),
-          { replace: true }
-        );
-        return;
-      }
-
-      if (state.view === "courseEdit" && state.editingCourseId) {
-        navigateTo(
-          makeRoute("course", {
-            courseId: state.editingCourseId
-          }),
-          { replace: true }
-        );
-        return;
-      }
+      if (state.view === "hole") { navigateTo(makeRoute("course", { courseId: state.activeCourseId }), { replace: true }); return; }
+      if (state.view === "round") { navigateTo(makeRoute("course", { courseId: state.activeCourseId }), { replace: true }); return; }
+      if (state.view === "courseEdit" && state.editingCourseId) { navigateTo(makeRoute("course", { courseId: state.editingCourseId }), { replace: true }); return; }
 
       navigateTo(makeRoute("courses"), { replace: true });
     }
 
     function renderStats() {
       const stats = getOverallStats();
-
       statsCourses.textContent = String(stats.courses);
       statsPlanned.textContent = String(stats.plannedHoles);
       statsCompletion.textContent = `${stats.completion}%`;
-
       exportBtn.disabled = state.courses.length === 0;
     }
 
     function getCourseDescription(course) {
       const parts = [];
-
-      if (course.par) {
-        parts.push(`Par ${course.par}`);
-      }
-
-      if (course.yards) {
-        parts.push(
-          `${Number(course.yards).toLocaleString()} yds`
-        );
-      }
-
-      parts.push(
-        `${course.holes.length} ${
-          course.holes.length === 1 ? "hole" : "holes"
-        }`
-      );
-
-      if (course.location) {
-        parts.push(course.location);
-      }
-
+      if (course.par) parts.push(`Par ${course.par}`);
+      if (course.yards) parts.push(`${Number(course.yards).toLocaleString()} yds`);
+      parts.push(`${course.holes.length} ${course.holes.length === 1 ? "hole" : "holes"}`);
+      if (course.location) parts.push(course.location);
       return parts.join(" • ");
     }
 
     function renderCourses() {
       renderStats();
-
       const query = courseSearch.value.trim().toLocaleLowerCase();
       clearSearchBtn.hidden = !query;
 
       const courses = state.courses
-        .filter(course => {
-          if (!query) {
-            return true;
-          }
-
-          return (
-            course.name.toLocaleLowerCase().includes(query) ||
-            course.location.toLocaleLowerCase().includes(query)
-          );
-        })
-        .sort(
-          (a, b) =>
-            Number(b.updatedAt || 0) -
-            Number(a.updatedAt || 0)
-        );
+        .filter(course => !query || course.name.toLocaleLowerCase().includes(query) || course.location.toLocaleLowerCase().includes(query))
+        .sort((a, b) => Number(b.updatedAt || 0) - Number(a.updatedAt || 0));
 
       coursesList.replaceChildren();
 
       if (courses.length === 0) {
         coursesList.hidden = true;
         coursesEmpty.hidden = false;
-
         if (state.courses.length === 0) {
           coursesEmptyTitle.textContent = "No courses yet";
-          coursesEmptyText.textContent =
-            "Add your first course to start planning hole by hole.";
+          coursesEmptyText.textContent = "Add your first course to start planning hole by hole.";
         } else {
           coursesEmptyTitle.textContent = "No matching courses";
-          coursesEmptyText.textContent =
-            "Try a different course name or location.";
+          coursesEmptyText.textContent = "Try a different course name or location.";
         }
-
         return;
       }
 
@@ -2694,64 +1532,30 @@
         const item = document.createElement("button");
         item.className = "list-item";
         item.type = "button";
-        item.setAttribute(
-          "aria-label",
-          `${course.name}. ${getCourseDescription(course)}. ` +
-          `${planned} of ${total} holes planned.`
-        );
+        item.setAttribute("aria-label", `${course.name}. ${getCourseDescription(course)}. ${planned} of ${total} holes planned.`);
 
         const main = document.createElement("span");
         main.className = "list-main";
-
-        main.append(
-          createTextElement(
-            "span",
-            "list-title",
-            course.name
-          ),
-          createTextElement(
-            "span",
-            "list-meta",
-            getCourseDescription(course)
-          )
-        );
+        main.append(createTextElement("span", "list-title", course.name), createTextElement("span", "list-meta", getCourseDescription(course)));
 
         const trailing = document.createElement("span");
         trailing.className = "list-trailing";
-
-        const pill = createTextElement(
-          "span",
-          `pill ${planned === total ? "complete" : ""}`,
-          `${planned}/${total} planned`
-        );
-
+        const pill = createTextElement("span", `pill ${planned === total ? "complete" : ""}`, `${planned}/${total} planned`);
         trailing.append(pill, createChevron());
         item.append(main, trailing);
 
-        item.addEventListener("click", () => {
-          navigateTo(
-            makeRoute("course", {
-              courseId: course.id
-            })
-          );
-        });
-
+        item.addEventListener("click", () => { navigateTo(makeRoute("course", { courseId: course.id })); });
         coursesList.appendChild(item);
       });
     }
 
     function renderCourse() {
       const course = getActiveCourse();
-
-      if (!course) {
-        return;
-      }
+      if (!course) return;
 
       const planned = getPlannedHoleCount(course);
       const total = course.holes.length;
-      const percentage = total
-        ? Math.round((planned / total) * 100)
-        : 0;
+      const percentage = total ? Math.round((planned / total) * 100) : 0;
 
       courseTitle.textContent = course.name;
       courseMeta.textContent = getCourseDescription(course);
@@ -2759,13 +1563,8 @@
       courseProgress.max = Math.max(total, 1);
       courseProgress.value = planned;
       courseProgress.textContent = `${percentage}%`;
-      courseProgress.setAttribute(
-        "aria-label",
-        `${planned} of ${total} holes planned`
-      );
-
-      courseProgressText.textContent =
-        `${planned} of ${total} ${total === 1 ? "hole" : "holes"}`;
+      courseProgress.setAttribute("aria-label", `${planned} of ${total} holes planned`);
+      courseProgressText.textContent = `${planned} of ${total} ${total === 1 ? "hole" : "holes"}`;
 
       courseNotesPanel.hidden = !course.notes;
       courseNotesDisplay.textContent = course.notes;
@@ -2774,25 +1573,10 @@
 
       course.holes.forEach((hole, index) => {
         const metadata = [];
-
         metadata.push(`Par ${hole.par}`);
-
-        if (hole.yardage) {
-          metadata.push(`${hole.yardage} yds`);
-        }
-
-        if (hole.dogleg !== "none") {
-          metadata.push(
-            `Dogleg ${
-              hole.dogleg.charAt(0).toUpperCase() +
-              hole.dogleg.slice(1)
-            }`
-          );
-        }
-
-        if (hole.hazards) {
-          metadata.push("Hazards noted");
-        }
+        if (hole.yardage) metadata.push(`${hole.yardage} yds`);
+        if (hole.dogleg !== "none") metadata.push(`Dogleg ${hole.dogleg.charAt(0).toUpperCase() + hole.dogleg.slice(1)}`);
+        if (hole.hazards) metadata.push("Hazards noted");
 
         const item = document.createElement("button");
         item.className = "list-item";
@@ -2800,41 +1584,15 @@
 
         const main = document.createElement("span");
         main.className = "list-main";
-
-        main.append(
-          createTextElement(
-            "span",
-            "list-title",
-            `Hole ${hole.number}`
-          ),
-          createTextElement(
-            "span",
-            "list-meta",
-            metadata.join(" • ")
-          )
-        );
+        main.append(createTextElement("span", "list-title", `Hole ${hole.number}`), createTextElement("span", "list-meta", metadata.join(" • ")));
 
         const trailing = document.createElement("span");
         trailing.className = "list-trailing";
-
-        if (isHolePlanned(hole)) {
-          trailing.append(
-            createTextElement("span", "pill complete", "Planned")
-          );
-        }
-
+        if (isHolePlanned(hole)) trailing.append(createTextElement("span", "pill complete", "Planned"));
         trailing.append(createChevron());
         item.append(main, trailing);
 
-        item.addEventListener("click", () => {
-          navigateTo(
-            makeRoute("hole", {
-              courseId: course.id,
-              holeIndex: index
-            })
-          );
-        });
-
+        item.addEventListener("click", () => { navigateTo(makeRoute("hole", { courseId: course.id, holeIndex: index })); });
         holesList.appendChild(item);
       });
     }
@@ -2842,39 +1600,19 @@
     function renderHoleHeading() {
       const course = getActiveCourse();
       const hole = getActiveHole();
+      if (!course || !hole) return;
 
-      if (!course || !hole) {
-        return;
-      }
-
-      holeTitle.textContent =
-        `Hole ${hole.number} – ${course.name}`;
-
+      holeTitle.textContent = `Hole ${hole.number} – ${course.name}`;
       const metadata = [`Par ${hole.par}`];
-
-      if (hole.yardage) {
-        metadata.push(`${hole.yardage} yds`);
-      }
-
-      if (hole.dogleg !== "none") {
-        metadata.push(
-          `Dogleg ${
-            hole.dogleg.charAt(0).toUpperCase() +
-            hole.dogleg.slice(1)
-          }`
-        );
-      }
-
+      if (hole.yardage) metadata.push(`${hole.yardage} yds`);
+      if (hole.dogleg !== "none") metadata.push(`Dogleg ${hole.dogleg.charAt(0).toUpperCase() + hole.dogleg.slice(1)}`);
       holeQuickMeta.textContent = metadata.join(" • ");
     }
 
     function renderHole() {
       const course = getActiveCourse();
       const hole = getActiveHole();
-
-      if (!course || !hole) {
-        return;
-      }
+      if (!course || !hole) return;
 
       holeDirty = false;
       autoPersistHole.cancel();
@@ -2886,25 +1624,11 @@
       course.holes.forEach((item, index) => {
         const chip = document.createElement("button");
         chip.type = "button";
-        chip.className =
-          `hole-chip ${
-            index === state.activeHoleIndex ? "active" : ""
-          }`;
-
+        chip.className = `hole-chip ${index === state.activeHoleIndex ? "active" : ""}`;
         chip.textContent = String(item.number);
-        chip.setAttribute(
-          "aria-label",
-          `Open hole ${item.number}`
-        );
-
-        if (index === state.activeHoleIndex) {
-          chip.setAttribute("aria-current", "page");
-        }
-
-        chip.addEventListener("click", () => {
-          switchHole(index);
-        });
-
+        chip.setAttribute("aria-label", `Open hole ${item.number}`);
+        if (index === state.activeHoleIndex) chip.setAttribute("aria-current", "page");
+        chip.addEventListener("click", () => { switchHole(index); });
         holeNav.appendChild(chip);
       });
 
@@ -2924,34 +1648,21 @@
 
       requestAnimationFrame(() => {
         const activeChip = holeNav.querySelector(".active");
-
-        activeChip?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center"
-        });
+        activeChip?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
       });
     }
 
     function syncHoleFromForm() {
       const course = getActiveCourse();
       const hole = getActiveHole();
-
-      if (!course || !hole) {
-        return false;
-      }
+      if (!course || !hole) return false;
 
       hole.number = state.activeHoleIndex + 1;
       hole.par = clampInteger(holePar.value, 3, 5, 4);
-      hole.yardage = sanitizeNumberInput(holeYardage.value, 1, 9999, "");
-      hole.teeYardage = sanitizeNumberInput(holeTee.value, 1, 9999, "");
-      hole.layup = sanitizeNumberInput(holeLayup.value, 1, 9999, "");
-      hole.dogleg = ["none", "left", "right"].includes(
-        holeDogleg.value
-      )
-        ? holeDogleg.value
-        : "none";
-
+      hole.yardage = holeYardage.value.trim();
+      hole.teeYardage = holeTee.value.trim();
+      hole.layup = holeLayup.value.trim();
+      hole.dogleg = ["none", "left", "right"].includes(holeDogleg.value) ? holeDogleg.value : "none";
       hole.hazards = holeHazards.value.trim();
       hole.teeTarget = teeTarget.value.trim();
       hole.teeSafe = teeSafe.value.trim();
@@ -2961,87 +1672,40 @@
       hole.notes = holeNotes.value.trim();
 
       course.updatedAt = Date.now();
-
       return true;
     }
 
     function setSaveState(saveState) {
       window.clearTimeout(saveStateTimer);
-
-      const labels = {
-        idle: "Save Hole Strategy",
-        saving: "Saving…",
-        saved: "Saved",
-        error: "Storage Unavailable"
-      };
-
+      const labels = { idle: "Save Hole Strategy", saving: "Saving…", saved: "Saved", error: "Storage Unavailable" };
       saveHoleBtn.dataset.saveState = saveState;
-      saveHoleLabel.textContent =
-        labels[saveState] || labels.idle;
+      saveHoleLabel.textContent = labels[saveState] || labels.idle;
 
       if (saveState === "saved") {
         saveStateTimer = window.setTimeout(() => {
-          if (!holeDirty) {
-            saveHoleBtn.dataset.saveState = "idle";
-            saveHoleLabel.textContent = labels.idle;
-          }
+          if (!holeDirty) { saveHoleBtn.dataset.saveState = "idle"; saveHoleLabel.textContent = labels.idle; }
         }, 1400);
       }
     }
 
     const autoPersistHole = debounce(() => {
-      if (!holeDirty) {
-        return;
-      }
-
+      if (!holeDirty) return;
       const saved = persist();
-
-      if (saved) {
-        holeDirty = false;
-        setSaveState("saved");
-      } else {
-        setSaveState("error");
-      }
+      if (saved) { holeDirty = false; setSaveState("saved"); } else { setSaveState("error"); }
     }, 650);
 
     function flushHoleDraft({ force = false } = {}) {
       autoPersistHole.cancel();
-
-      if (state.view !== "hole") {
-        return true;
-      }
-
-      if (force) {
-        syncHoleFromForm();
-        holeDirty = true;
-      }
-
-      if (!holeDirty) {
-        return true;
-      }
-
+      if (state.view !== "hole") return true;
+      if (force) { syncHoleFromForm(); holeDirty = true; }
+      if (!holeDirty) return true;
       const saved = persist();
-
-      if (saved) {
-        holeDirty = false;
-        setSaveState("saved");
-      } else {
-        setSaveState("error");
-      }
-
+      if (saved) { holeDirty = false; setSaveState("saved"); } else { setSaveState("error"); }
       return saved;
     }
 
     function handleHoleInput() {
-      if (!holeForm.checkValidity()) {
-        setSaveState("error");
-        return;
-      }
-
-      if (!syncHoleFromForm()) {
-        return;
-      }
-
+      if (!syncHoleFromForm()) return;
       holeDirty = true;
       setSaveState("saving");
       renderHoleHeading();
@@ -3050,70 +1714,30 @@
 
     function saveHole(event) {
       event.preventDefault();
-
-      if (!holeForm.reportValidity()) {
-        setSaveState("error");
-        announce("Check the highlighted hole fields.");
-        return;
-      }
-
+      if (!holeForm.reportValidity()) { setSaveState("error"); announce("Check the highlighted hole fields."); return; }
       const saved = flushHoleDraft({ force: true });
-
-      if (saved) {
-        showToast("Hole strategy saved.");
-      } else {
-        showToast(
-          "The strategy is available this session, but device storage failed.",
-          { type: "danger", duration: 5000 }
-        );
-      }
+      if (saved) showToast("Hole strategy saved.");
+      else showToast("The strategy is available this session, but device storage failed.", { type: "danger", duration: 5000 });
     }
 
     function switchHole(index) {
       const course = getActiveCourse();
-
-      if (!course || !course.holes[index]) {
-        return;
-      }
-
+      if (!course || !course.holes[index]) return;
       flushHoleDraft();
-
       state.activeHoleIndex = index;
       replaceCurrentRoute();
       renderHole();
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
+      window.scrollTo({ top: 0, behavior: "smooth" });
       announce(`Opened hole ${course.holes[index].number}.`);
     }
 
     function startRound() {
       const course = getActiveCourse();
-
-      if (!course) {
-        return;
-      }
-
+      if (!course) return;
       const now = Date.now();
-
       const round = {
-        id: uid(),
-        courseId: course.id,
-        courseName: course.name,
-        date: now,
-        holes: course.holes.map(h => ({
-          number: h.number,
-          par: h.par,
-          yardage: h.yardage || "",
-          strokes: "",
-          putts: "",
-          fairway: "",
-          gir: "",
-          comments: ""
-        }))
+        id: uid(), courseId: course.id, courseName: course.name, date: now,
+        holes: course.holes.map(h => ({ number: h.number, par: h.par, yardage: h.yardage || "", strokes: "", putts: "", fairway: "", gir: "", comments: "" }))
       };
 
       state.rounds.push(round);
@@ -3121,39 +1745,20 @@
       state.activeRoundHoleIndex = 0;
       persist();
 
-      navigateTo(
-        makeRoute("round", {
-          courseId: course.id,
-          roundId: round.id
-        })
-      );
-
+      navigateTo(makeRoute("round", { courseId: course.id, roundId: round.id }));
       showToast("Round started. Good luck!");
     }
 
     function renderRoundSummary() {
       const round = getActiveRound();
-
-      if (!round) {
-        return;
-      }
-
+      if (!round) return;
       const played = round.holes.filter(h => h.strokes !== "");
-      const totalStrokes = played.reduce(
-        (sum, h) => sum + Number(h.strokes),
-        0
-      );
-      const totalPar = played.reduce(
-        (sum, h) => sum + Number(h.par),
-        0
-      );
+      const totalStrokes = played.reduce((sum, h) => sum + Number(h.strokes), 0);
+      const totalPar = played.reduce((sum, h) => sum + Number(h.par), 0);
       const diff = totalStrokes - totalPar;
-      const toPar =
-        diff === 0 ? "E" : diff > 0 ? `+${diff}` : `${diff}`;
+      const toPar = diff === 0 ? "E" : diff > 0 ? `+${diff}` : `${diff}`;
 
-      roundTotalStrokes.textContent = played.length
-        ? String(totalStrokes)
-        : "–";
+      roundTotalStrokes.textContent = played.length ? String(totalStrokes) : "–";
       roundTotalToPar.textContent = played.length ? toPar : "E";
       roundHolesPlayed.textContent = String(played.length);
     }
@@ -3162,44 +1767,25 @@
       const course = getActiveCourse();
       const round = getActiveRound();
       const hole = getActiveRoundHole();
-
-      if (!course || !round || !hole) {
-        return;
-      }
+      if (!course || !round || !hole) return;
 
       roundDirty = false;
       autoPersistRound.cancel();
       setRoundSaveState("idle");
 
       roundTitle.textContent = `Hole ${hole.number} – ${course.name}`;
-      roundMeta.textContent =
-        `Par ${hole.par}` +
-        (hole.yardage ? ` • ${hole.yardage} yds` : "");
+      roundMeta.textContent = `Par ${hole.par}` + (hole.yardage ? ` • ${hole.yardage} yds` : "");
 
       roundHoleNav.replaceChildren();
 
       round.holes.forEach((item, index) => {
         const chip = document.createElement("button");
         chip.type = "button";
-        chip.className =
-          `hole-chip ${
-            index === state.activeRoundHoleIndex ? "active" : ""
-          } ${item.strokes !== "" ? "scored" : ""}`;
-
+        chip.className = `hole-chip ${index === state.activeRoundHoleIndex ? "active" : ""} ${item.strokes !== "" ? "scored" : ""}`;
         chip.textContent = String(item.number);
-        chip.setAttribute(
-          "aria-label",
-          `Open hole ${item.number}`
-        );
-
-        if (index === state.activeRoundHoleIndex) {
-          chip.setAttribute("aria-current", "page");
-        }
-
-        chip.addEventListener("click", () => {
-          switchRoundHole(index);
-        });
-
+        chip.setAttribute("aria-label", `Open hole ${item.number}`);
+        if (index === state.activeRoundHoleIndex) chip.setAttribute("aria-current", "page");
+        chip.addEventListener("click", () => { switchRoundHole(index); });
         roundHoleNav.appendChild(chip);
       });
 
@@ -3212,119 +1798,60 @@
       roundGIR.value = hole.gir || "";
       roundComments.value = hole.comments || "";
 
-      const courseHole =
-        course.holes.find(h => h.number === hole.number) || null;
+      const courseHole = course.holes[state.activeRoundHoleIndex] || null;
       renderRoundStrategy(courseHole);
-
-      editPlanFromRoundBtn.disabled = !courseHole;
-
       renderRoundSummary();
 
       requestAnimationFrame(() => {
         const activeChip = roundHoleNav.querySelector(".active");
-
-        activeChip?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center"
-        });
+        activeChip?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
       });
     }
 
     function syncRoundFromForm() {
       const round = getActiveRound();
       const hole = getActiveRoundHole();
+      if (!round || !hole) return false;
 
-      if (!round || !hole) {
-        return false;
-      }
-
-      hole.strokes = sanitizeNumberInput(roundStrokes.value, 1, 30, "");
-      hole.putts = sanitizeNumberInput(roundPutts.value, 0, 10, "");
+      hole.strokes = roundStrokes.value.trim();
+      hole.putts = roundPutts.value.trim();
       hole.fairway = roundFairway.value;
       hole.gir = roundGIR.value;
       hole.comments = roundComments.value.trim();
-
       return true;
     }
 
     function setRoundSaveState(saveState) {
       window.clearTimeout(roundSaveStateTimer);
-
-      const labels = {
-        idle: "Save Hole",
-        saving: "Saving…",
-        saved: "Saved",
-        error: "Storage Unavailable"
-      };
-
+      const labels = { idle: "Save Hole", saving: "Saving…", saved: "Saved", error: "Storage Unavailable" };
       saveRoundHoleBtn.dataset.saveState = saveState;
-      saveRoundHoleLabel.textContent =
-        labels[saveState] || labels.idle;
+      saveRoundHoleLabel.textContent = labels[saveState] || labels.idle;
 
       if (saveState === "saved") {
         roundSaveStateTimer = window.setTimeout(() => {
-          if (!roundDirty) {
-            saveRoundHoleBtn.dataset.saveState = "idle";
-            saveRoundHoleLabel.textContent = labels.idle;
-          }
+          if (!roundDirty) { saveRoundHoleBtn.dataset.saveState = "idle"; saveRoundHoleLabel.textContent = labels.idle; }
         }, 1400);
       }
     }
 
     const autoPersistRound = debounce(() => {
-      if (!roundDirty) {
-        return;
-      }
-
+      if (!roundDirty) return;
       const saved = persist();
-
-      if (saved) {
-        roundDirty = false;
-        setRoundSaveState("saved");
-      } else {
-        setRoundSaveState("error");
-      }
+      if (saved) { roundDirty = false; setRoundSaveState("saved"); } else { setRoundSaveState("error"); }
     }, 650);
 
     function flushRoundDraft({ force = false } = {}) {
       autoPersistRound.cancel();
-
-      if (state.view !== "round") {
-        return true;
-      }
-
-      if (force) {
-        syncRoundFromForm();
-        roundDirty = true;
-      }
-
-      if (!roundDirty) {
-        return true;
-      }
-
+      if (state.view !== "round") return true;
+      if (force) { syncRoundFromForm(); roundDirty = true; }
+      if (!roundDirty) return true;
       const saved = persist();
-
-      if (saved) {
-        roundDirty = false;
-        setRoundSaveState("saved");
-      } else {
-        setRoundSaveState("error");
-      }
-
+      if (saved) { roundDirty = false; setRoundSaveState("saved"); } else { setRoundSaveState("error"); }
       return saved;
     }
 
     function handleRoundInput() {
-      if (!roundForm.checkValidity()) {
-        setRoundSaveState("error");
-        return;
-      }
-
-      if (!syncRoundFromForm()) {
-        return;
-      }
-
+      if (!syncRoundFromForm()) return;
       roundDirty = true;
       setRoundSaveState("saving");
       renderRoundSummary();
@@ -3333,96 +1860,204 @@
 
     function saveRoundHole(event) {
       event.preventDefault();
-
-      if (!roundForm.reportValidity()) {
-        setRoundSaveState("error");
-        announce("Check the highlighted round fields.");
-        return;
-      }
-
+      if (!roundForm.reportValidity()) { setRoundSaveState("error"); announce("Check the highlighted round fields."); return; }
       const saved = flushRoundDraft({ force: true });
-
-      if (saved) {
-        showToast("Hole saved.");
-      } else {
-        showToast(
-          "The score is available this session, but device storage failed.",
-          { type: "danger", duration: 5000 }
-        );
-      }
+      if (saved) showToast("Hole saved.");
+      else showToast("The score is available this session, but device storage failed.", { type: "danger", duration: 5000 });
     }
 
     function switchRoundHole(index) {
       const round = getActiveRound();
-
-      if (!round || !round.holes[index]) {
-        return;
-      }
-
+      if (!round || !round.holes[index]) return;
       flushRoundDraft();
-
       state.activeRoundHoleIndex = index;
       replaceCurrentRoute();
       renderRound();
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
+      window.scrollTo({ top: 0, behavior: "smooth" });
       announce(`Opened hole ${round.holes[index].number}.`);
     }
 
     function finishRound() {
       flushRoundDraft({ force: true });
-
       const round = getActiveRound();
       const course = getActiveCourse();
+      if (!round || !course) return;
 
-      if (!round || !course) {
+      const played = round.holes.filter(h => h.strokes !== "");
+      const totalStrokes = played.reduce((s, h) => s + Number(h.strokes), 0);
+      const totalPar = played.reduce((s, h) => s + Number(h.par), 0);
+      const diff = totalStrokes - totalPar;
+      const toPar = diff === 0 ? "E" : diff > 0 ? `+${diff}` : `${diff}`;
+
+      round.completedAt = Date.now();
+      persist();
+
+      showToast(`Round finished: ${totalStrokes} strokes (${toPar}) over ${played.length} ${played.length === 1 ? "hole" : "holes"}.`, { type: "success", duration: 6000 });
+
+      navigateTo(makeRoute("roundDetail", { courseId: course.id, roundId: round.id }), { replace: true });
+    }
+
+    function formatRoundDate(ms) {
+      const date = new Date(ms);
+      return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    function getCourseRounds(courseId) {
+      return state.rounds
+        .filter(round => round.courseId === courseId)
+        .sort((a, b) => Number(b.date || 0) - Number(a.date || 0));
+    }
+
+    function summarizeRound(round) {
+      const played = round.holes.filter(h => h.strokes !== "");
+      const totalStrokes = played.reduce((sum, h) => sum + Number(h.strokes), 0);
+      const totalPar = played.reduce((sum, h) => sum + Number(h.par), 0);
+      const diff = totalStrokes - totalPar;
+      const toPar = diff === 0 ? "E" : diff > 0 ? `+${diff}` : `${diff}`;
+      return { played: played.length, totalStrokes, toPar };
+    }
+
+    function renderHistory() {
+      const course = getActiveCourse();
+      if (!course) return;
+
+      historyTitle.textContent = "Round History";
+      historySubtitle.textContent = course.name;
+
+      const rounds = getCourseRounds(course.id);
+
+      historyList.replaceChildren();
+
+      if (rounds.length === 0) {
+        historyList.hidden = true;
+        historyEmpty.hidden = false;
         return;
       }
 
-      const played = round.holes.filter(h => h.strokes !== "");
-      const totalStrokes = played.reduce(
-        (s, h) => s + Number(h.strokes),
-        0
-      );
-      const totalPar = played.reduce(
-        (s, h) => s + Number(h.par),
-        0
-      );
-      const diff = totalStrokes - totalPar;
-      const toPar =
-        diff === 0 ? "E" : diff > 0 ? `+${diff}` : `${diff}`;
+      historyList.hidden = false;
+      historyEmpty.hidden = true;
 
+      rounds.forEach(round => {
+        const summary = summarizeRound(round);
+        const finished = Boolean(round.completedAt);
+
+        const item = document.createElement("button");
+        item.className = "list-item";
+        item.type = "button";
+
+        const main = document.createElement("span");
+        main.className = "list-main";
+        main.append(
+          createTextElement("span", "list-title", formatRoundDate(round.date)),
+          createTextElement(
+            "span",
+            "list-meta",
+            summary.played
+              ? `${summary.totalStrokes} strokes (${summary.toPar}) • ${summary.played}/${round.holes.length} holes`
+              : `${round.holes.length} holes • no scores entered`
+          )
+        );
+
+        const trailing = document.createElement("span");
+        trailing.className = "list-trailing";
+        trailing.append(
+          createTextElement("span", `pill ${finished ? "complete" : ""}`, finished ? "Finished" : "In progress"),
+          createChevron()
+        );
+
+        item.append(main, trailing);
+
+        item.addEventListener("click", () => {
+          state.activeRoundId = round.id;
+          navigateTo(makeRoute("roundDetail", { courseId: course.id, roundId: round.id }));
+        });
+
+        historyList.appendChild(item);
+      });
+    }
+
+    function renderRoundDetail() {
+      const round = getActiveRound();
+      if (!round) return;
+
+      const course = getCourse(round.courseId);
+      const finished = Boolean(round.completedAt);
+      const summary = summarizeRound(round);
+
+      roundDetailTitle.textContent = course ? course.name : round.courseName || "Round";
+      roundDetailMeta.textContent =
+        `${formatRoundDate(round.date)} • ${finished ? "Finished" : "In progress"}` +
+        (summary.played ? ` • ${summary.totalStrokes} strokes (${summary.toPar})` : "");
+
+      scorecardBody.replaceChildren();
+
+      const fairwayLabels = { hit: "Hit", left: "Left", right: "Right", na: "N/A", "": "–" };
+      const girLabels = { yes: "Yes", no: "No", "": "–" };
+
+      round.holes.forEach(hole => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${hole.number}</td>
+          <td>${hole.par}</td>
+          <td class="muted">${hole.yardage || "–"}</td>
+          <td>${hole.strokes || "–"}</td>
+          <td>${hole.putts || "–"}</td>
+          <td class="muted">${fairwayLabels[hole.fairway] ?? "–"}</td>
+          <td class="muted">${girLabels[hole.gir] ?? "–"}</td>
+        `;
+        scorecardBody.appendChild(row);
+      });
+
+      scorecardFoot.replaceChildren();
+      const footRow = document.createElement("tr");
+      const totalPar = round.holes.reduce((sum, h) => sum + Number(h.par || 0), 0);
+      footRow.innerHTML = `
+        <td>Total</td>
+        <td>${totalPar}</td>
+        <td></td>
+        <td>${summary.played ? summary.totalStrokes : "–"}</td>
+        <td colspan="3">${summary.played ? summary.toPar : ""}</td>
+      `;
+      scorecardFoot.appendChild(footRow);
+
+      const commentedHoles = round.holes.filter(h => h.comments && h.comments.trim());
+      roundCommentsCard.hidden = commentedHoles.length === 0;
+      roundCommentsList.replaceChildren();
+
+      commentedHoles.forEach(hole => {
+        const item = document.createElement("div");
+        item.className = "round-comment-item";
+        const label = document.createElement("span");
+        label.className = "round-comment-hole";
+        label.textContent = `Hole ${hole.number}`;
+        const text = document.createElement("p");
+        text.className = "round-comment-text";
+        text.textContent = hole.comments;
+        item.append(label, text);
+        roundCommentsList.appendChild(item);
+      });
+
+      resumeRoundBtn.hidden = finished;
+    }
+
+    function deleteRound() {
+      const round = getActiveRound();
+      if (!round) return;
+
+      const confirmed = window.confirm("Delete this round? This can't be undone.");
+      if (!confirmed) return;
+
+      const courseId = round.courseId;
+      state.rounds = state.rounds.filter(item => item.id !== round.id);
+      state.activeRoundId = null;
       persist();
 
-      showToast(
-        `Round finished: ${totalStrokes} strokes (${toPar}) over ` +
-        `${played.length} ${played.length === 1 ? "hole" : "holes"}.`,
-        { type: "success", duration: 6000 }
-      );
-
-      state.activeRoundId = null;
-
-      if (state.navDepth > 0) {
-        history.back();
-      } else {
-        navigateTo(
-          makeRoute("course", {
-            courseId: course.id
-          }),
-          { replace: true }
-        );
-      }
+      showToast("Round deleted.");
+      navigateTo(makeRoute("history", { courseId }), { replace: true });
     }
 
     function renderCourseEditor() {
-      const course = state.editingCourseId
-        ? getCourse(state.editingCourseId)
-        : null;
-
+      const course = state.editingCourseId ? getCourse(state.editingCourseId) : null;
       courseName.setCustomValidity("");
       courseNameError.hidden = true;
       courseNameError.textContent = "";
@@ -3450,85 +2085,45 @@
 
     function isDuplicateCourseName(name, excludedId = null) {
       const normalizedName = name.trim().toLocaleLowerCase();
-
-      return state.courses.some(course => {
-        return (
-          course.id !== excludedId &&
-          course.name.trim().toLocaleLowerCase() === normalizedName
-        );
-      });
+      return state.courses.some(course => course.id !== excludedId && course.name.trim().toLocaleLowerCase() === normalizedName);
     }
 
     function resizeCourseHoles(course, newCount) {
       const currentCount = course.holes.length;
-
       if (newCount > currentCount) {
-        for (
-          let number = currentCount + 1;
-          number <= newCount;
-          number += 1
-        ) {
-          course.holes.push(createHole(number));
-        }
+        for (let number = currentCount + 1; number <= newCount; number += 1) course.holes.push(createHole(number));
       } else if (newCount < currentCount) {
         course.holes = course.holes.slice(0, newCount);
       }
-
-      course.holes.forEach((hole, index) => {
-        hole.number = index + 1;
-      });
+      course.holes.forEach((hole, index) => { hole.number = index + 1; });
     }
 
     function saveCourse(event) {
       event.preventDefault();
-
       courseName.setCustomValidity("");
       courseNameError.hidden = true;
       courseNameError.textContent = "";
 
       const name = courseName.value.trim();
-      const holesCount = clampInteger(
-        courseHoles.value,
-        1,
-        MAX_HOLES,
-        18
-      );
+      const holesCount = clampInteger(courseHoles.value, 1, MAX_HOLES, 18);
 
-      if (
-        isDuplicateCourseName(name, state.editingCourseId)
-      ) {
-        const message =
-          "A course with this name already exists.";
-
+      if (isDuplicateCourseName(name, state.editingCourseId)) {
+        const message = "A course with this name already exists.";
         courseName.setCustomValidity(message);
         courseNameError.textContent = message;
         courseNameError.hidden = false;
       }
 
-      if (!courseForm.reportValidity()) {
-        return;
-      }
+      if (!courseForm.reportValidity()) return;
 
       if (state.editingCourseId) {
         const course = getCourse(state.editingCourseId);
-
-        if (!course) {
-          return;
-        }
+        if (!course) return;
 
         if (holesCount < course.holes.length) {
           const removedHoles = course.holes.slice(holesCount);
           const removesPlanning = removedHoles.some(isHoleTouched);
-
-          if (
-            removesPlanning &&
-            !window.confirm(
-              `Reducing this course to ${holesCount} holes will ` +
-              "delete strategy data from the removed holes. Continue?"
-            )
-          ) {
-            return;
-          }
+          if (removesPlanning && !window.confirm(`Reducing this course to ${holesCount} holes will delete strategy data from the removed holes. Continue?`)) return;
         }
 
         resizeCourseHoles(course, holesCount);
@@ -3543,42 +2138,19 @@
         courseEditDirty = false;
         const saved = persist();
 
-        showToast(
-          saved
-            ? "Course updated."
-            : "Course updated for this session, but device storage failed.",
-          {
-            type: saved ? "success" : "danger",
-            duration: saved ? 3200 : 5000
-          }
-        );
+        showToast(saved ? "Course updated." : "Course updated for this session, but device storage failed.", { type: saved ? "success" : "danger", duration: saved ? 3200 : 5000 });
 
-        if (state.navDepth > 0) {
-          history.back();
-        } else {
-          navigateTo(
-            makeRoute("course", {
-              courseId: course.id
-            }),
-            { replace: true }
-          );
-        }
+        if (state.navDepth > 0) history.back();
+        else navigateTo(makeRoute("course", { courseId: course.id }), { replace: true });
 
         return;
       }
 
       const now = Date.now();
-
       const course = {
-        id: uid(),
-        name,
-        par: coursePar.value.trim(),
-        yards: courseYards.value.trim(),
-        location: courseLocation.value.trim(),
-        notes: courseNotes.value.trim(),
-        holes: createHoles(holesCount),
-        createdAt: now,
-        updatedAt: now
+        id: uid(), name, par: coursePar.value.trim(), yards: courseYards.value.trim(),
+        location: courseLocation.value.trim(), notes: courseNotes.value.trim(),
+        holes: createHoles(holesCount), createdAt: now, updatedAt: now
       };
 
       state.courses.push(course);
@@ -3586,120 +2158,46 @@
 
       const saved = persist();
 
-      navigateTo(
-        makeRoute("course", {
-          courseId: course.id
-        }),
-        { replace: true }
-      );
+      navigateTo(makeRoute("course", { courseId: course.id }), { replace: true });
 
-      showToast(
-        saved
-          ? "Course added."
-          : "Course added for this session, but device storage failed.",
-        {
-          type: saved ? "success" : "danger",
-          duration: saved ? 3200 : 5000
-        }
-      );
+      showToast(saved ? "Course added." : "Course added for this session, but device storage failed.", { type: saved ? "success" : "danger", duration: saved ? 3200 : 5000 });
     }
 
     function deleteCourse() {
       const course = getActiveCourse();
+      if (!course) return;
 
-      if (!course) {
-        return;
-      }
+      const confirmed = window.confirm(`Delete "${course.name}"? You will have a chance to undo.`);
+      if (!confirmed) return;
 
-      const confirmed = window.confirm(
-        `Delete "${course.name}"? You will have a chance to undo.`
-      );
+      const deletedIndex = state.courses.findIndex(item => item.id === course.id);
+      const deletedCourse = JSON.parse(JSON.stringify(course));
 
-      if (!confirmed) {
-        return;
-      }
-
-      const deletedIndex = state.courses.findIndex(
-        item => item.id === course.id
-      );
-
-      const deletedCourse = JSON.parse(
-        JSON.stringify(course)
-      );
-
-      state.courses = state.courses.filter(
-        item => item.id !== course.id
-      );
-
+      state.courses = state.courses.filter(item => item.id !== course.id);
       const saved = persist();
 
-      showToast(
-        saved
-          ? `"${course.name}" deleted.`
-          : `"${course.name}" removed for this session.`,
-        {
-          type: "warning",
-          duration: 7000,
-          actionLabel: "Undo",
-          onAction: () => {
-            if (getCourse(deletedCourse.id)) {
-              return;
-            }
-
-            const insertionIndex = Math.min(
-              Math.max(deletedIndex, 0),
-              state.courses.length
-            );
-
-            state.courses.splice(
-              insertionIndex,
-              0,
-              deletedCourse
-            );
-
-            persist();
-
-            if (state.view === "courses") {
-              renderCourses();
-            }
-
-            showToast(`"${deletedCourse.name}" restored.`);
-          }
+      showToast(saved ? `"${course.name}" deleted.` : `"${course.name}" removed for this session.`, {
+        type: "warning", duration: 7000, actionLabel: "Undo",
+        onAction: () => {
+          if (getCourse(deletedCourse.id)) return;
+          const insertionIndex = Math.min(Math.max(deletedIndex, 0), state.courses.length);
+          state.courses.splice(insertionIndex, 0, deletedCourse);
+          persist();
+          if (state.view === "courses") renderCourses();
+          showToast(`"${deletedCourse.name}" restored.`);
         }
-      );
+      });
 
-      if (state.navDepth > 0) {
-        history.back();
-      } else {
-        navigateTo(makeRoute("courses"), {
-          replace: true
-        });
-      }
+      if (state.navDepth > 0) history.back();
+      else navigateTo(makeRoute("courses"), { replace: true });
     }
 
     function exportData() {
-      if (state.courses.length === 0) {
-        showToast("There are no courses to export.", {
-          type: "warning"
-        });
-        return;
-      }
-
+      if (state.courses.length === 0) { showToast("There are no courses to export.", { type: "warning" }); return; }
       flushHoleDraft();
 
-      const backup = {
-        app: "ForePlan",
-        version: DATA_VERSION,
-        exportedAt: new Date().toISOString(),
-        courses: state.courses,
-        rounds: state.rounds
-      };
-
-      const blob = new Blob(
-        [JSON.stringify(backup, null, 2)],
-        { type: "application/json" }
-      );
-
+      const backup = { app: "ForePlan", version: DATA_VERSION, exportedAt: new Date().toISOString(), courses: state.courses, rounds: state.rounds };
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       const date = new Date().toISOString().slice(0, 10);
@@ -3710,118 +2208,71 @@
       link.click();
       link.remove();
 
-      window.setTimeout(() => {
-        URL.revokeObjectURL(url);
-      }, 0);
-
+      window.setTimeout(() => { URL.revokeObjectURL(url); }, 0);
       showToast("Backup exported.");
     }
 
     async function importData(file) {
-      if (!file) {
-        return;
-      }
-
-      if (file.size > 5 * 1024 * 1024) {
-        showToast("That backup file is too large.", {
-          type: "danger"
-        });
-        return;
-      }
+      if (!file) return;
+      if (file.size > 5 * 1024 * 1024) { showToast("That backup file is too large.", { type: "danger" }); return; }
 
       try {
         const text = await file.text();
         const parsed = JSON.parse(text);
-
-        if (!parsed || !Array.isArray(parsed.courses)) {
-          throw new Error("The file does not contain a courses array.");
-        }
+        if (!parsed || !Array.isArray(parsed.courses)) throw new Error("The file does not contain a courses array.");
 
         const importedCourses = normalizeCourses(parsed.courses);
+        if (parsed.courses.length > 0 && importedCourses.length === 0) throw new Error("No valid courses were found.");
 
-        if (
-          parsed.courses.length > 0 &&
-          importedCourses.length === 0
-        ) {
-          throw new Error("No valid courses were found.");
-        }
-
-        const confirmed = window.confirm(
-          `Import ${importedCourses.length} ` +
-          `${importedCourses.length === 1 ? "course" : "courses"}? ` +
-          "This will replace the courses currently stored on this device."
-        );
-
-        if (!confirmed) {
-          return;
-        }
+        const confirmed = window.confirm(`Import ${importedCourses.length} ${importedCourses.length === 1 ? "course" : "courses"}? This will replace the courses currently stored on this device.`);
+        if (!confirmed) return;
 
         state.courses = importedCourses;
-        state.rounds = Array.isArray(parsed.rounds)
-          ? normalizeRounds(parsed.rounds)
-          : [];
+        state.rounds = Array.isArray(parsed.rounds) ? normalizeRounds(parsed.rounds) : [];
 
         courseSearch.value = "";
-
         const saved = persist();
 
-        navigateTo(makeRoute("courses"), {
-          replace: true
-        });
+        navigateTo(makeRoute("courses"), { replace: true });
 
-        showToast(
-          saved
-            ? "Backup imported successfully."
-            : "Backup imported for this session, but device storage failed.",
-          {
-            type: saved ? "success" : "danger",
-            duration: saved ? 3200 : 5000
-          }
-        );
+        showToast(saved ? "Backup imported successfully." : "Backup imported for this session, but device storage failed.", { type: saved ? "success" : "danger", duration: saved ? 3200 : 5000 });
       } catch (error) {
         console.warn("Failed to import backup", error);
-
-        showToast(
-          "The selected file is not a valid ForePlan backup.",
-          {
-            type: "danger",
-            duration: 5000
-          }
-        );
+        showToast("The selected file is not a valid ForePlan backup.", { type: "danger", duration: 5000 });
       } finally {
         importFile.value = "";
       }
     }
 
-    const renderFilteredCourses = debounce(() => {
-      renderCourses();
-    }, 120);
+    const renderFilteredCourses = debounce(() => { renderCourses(); }, 120);
 
     backBtn.addEventListener("click", goBack);
 
-    addCourseBtn.addEventListener("click", () => {
-      navigateTo(makeRoute("courseEdit"));
-    });
+    addCourseBtn.addEventListener("click", () => { navigateTo(makeRoute("courseEdit")); });
 
     editCourseBtn.addEventListener("click", () => {
       const course = getActiveCourse();
-
-      if (!course) {
-        return;
-      }
-
-      navigateTo(
-        makeRoute("courseEdit", {
-          courseId: course.id,
-          editingCourseId: course.id
-        })
-      );
+      if (!course) return;
+      navigateTo(makeRoute("courseEdit", { courseId: course.id, editingCourseId: course.id }));
     });
 
     deleteCourseBtn.addEventListener("click", deleteCourse);
-
     startRoundBtn.addEventListener("click", startRound);
 
+    historyBtn.addEventListener("click", () => {
+      const course = getActiveCourse();
+      if (!course) return;
+      navigateTo(makeRoute("history", { courseId: course.id }));
+    });
+
+    resumeRoundBtn.addEventListener("click", () => {
+      const round = getActiveRound();
+      if (!round) return;
+      state.activeRoundHoleIndex = 0;
+      navigateTo(makeRoute("round", { courseId: round.courseId, roundId: round.id }));
+    });
+
+    deleteRoundBtn.addEventListener("click", deleteRound);
     cancelCourseEdit.addEventListener("click", goBack);
 
     courseForm.addEventListener("submit", saveCourse);
@@ -3832,32 +2283,12 @@
 
     editPlanFromRoundBtn.addEventListener("click", () => {
       const course = getActiveCourse();
-      const roundHole = getActiveRoundHole();
-
-      if (!course || !roundHole) {
-        return;
-      }
-
-      const courseHole =
-        course.holes.find(h => h.number === roundHole.number) || null;
-
-      if (!courseHole) {
-        return;
-      }
-
-      const courseHoleIndex = course.holes.indexOf(courseHole);
-
-      navigateTo(
-        makeRoute("hole", {
-          courseId: course.id,
-          holeIndex: courseHoleIndex
-        })
-      );
+      if (!course) return;
+      navigateTo(makeRoute("hole", { courseId: course.id, holeIndex: state.activeRoundHoleIndex }));
     });
 
     courseForm.addEventListener("input", event => {
       courseEditDirty = true;
-
       if (event.target === courseName) {
         courseName.setCustomValidity("");
         courseNameError.hidden = true;
@@ -3886,55 +2317,25 @@
 
     exportBtn.addEventListener("click", exportData);
 
-    importBtn.addEventListener("click", () => {
-      importFile.value = "";
-      importFile.click();
-    });
+    importBtn.addEventListener("click", () => { importFile.value = ""; importFile.click(); });
+    importFile.addEventListener("change", () => { importData(importFile.files?.[0]); });
 
-    importFile.addEventListener("change", () => {
-      importData(importFile.files?.[0]);
-    });
-
-    toast.addEventListener("click", event => {
-      if (event.target === toast) {
-        hideToast();
-      }
-    });
+    toast.addEventListener("click", event => { if (event.target === toast) hideToast(); });
 
     window.addEventListener("popstate", event => {
       const currentRoute = routeSnapshot();
 
-      // Allow the user to cancel navigation when discarding an unsaved course edit.
-      if (
-        state.view === "courseEdit" &&
-        courseEditDirty &&
-        !window.confirm("Discard your unsaved course changes?")
-      ) {
-        history.pushState(
-          currentRoute,
-          "",
-          window.location.href
-        );
+      if (state.view === "courseEdit" && courseEditDirty && !window.confirm("Discard your unsaved course changes?")) {
+        history.pushState(currentRoute, "", window.location.href);
         return;
       }
 
       courseEditDirty = false;
 
-      if (state.view === "hole") {
-        flushHoleDraft();
-      } else if (state.view === "round") {
-        flushRoundDraft();
-      }
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
 
-      const targetRoute =
-        event.state?.foreplan === true
-          ? event.state
-          : {
-              foreplan: true,
-              ...makeRoute("courses"),
-              navDepth: 0
-            };
-
+      const targetRoute = event.state?.foreplan === true ? event.state : { foreplan: true, ...makeRoute("courses"), navDepth: 0 };
       applyRoute(targetRoute);
       replaceCurrentRoute();
     });
@@ -3942,119 +2343,49 @@
     document.addEventListener("keydown", event => {
       const modifier = event.metaKey || event.ctrlKey;
       const target = event.target;
-      const isEditable =
-        target instanceof HTMLElement &&
-        target.matches("input, textarea, select, [contenteditable='true']");
+      const isEditable = target instanceof HTMLElement && target.matches("input, textarea, select, [contenteditable='true']");
 
-      if (
-        event.key === "Escape" &&
-        state.view !== "courses" &&
-        !isEditable
-      ) {
-        event.preventDefault();
-        goBack();
-      }
+      if (event.key === "Escape" && state.view !== "courses" && !isEditable) { event.preventDefault(); goBack(); }
 
-      if (
-        modifier &&
-        event.key.toLocaleLowerCase() === "n" &&
-        state.view !== "courseEdit"
-      ) {
-        event.preventDefault();
-        navigateTo(makeRoute("courseEdit"));
-      }
+      if (modifier && event.key.toLocaleLowerCase() === "n" && state.view !== "courseEdit") { event.preventDefault(); navigateTo(makeRoute("courseEdit")); }
 
-      if (
-        modifier &&
-        event.key.toLocaleLowerCase() === "s"
-      ) {
-        if (state.view === "hole") {
-          event.preventDefault();
-          holeForm.requestSubmit();
-        } else if (state.view === "round") {
-          event.preventDefault();
-          roundForm.requestSubmit();
-        } else if (state.view === "courseEdit") {
-          event.preventDefault();
-          courseForm.requestSubmit();
-        }
+      if (modifier && event.key.toLocaleLowerCase() === "s") {
+        if (state.view === "hole") { event.preventDefault(); holeForm.requestSubmit(); }
+        else if (state.view === "round") { event.preventDefault(); roundForm.requestSubmit(); }
+        else if (state.view === "courseEdit") { event.preventDefault(); courseForm.requestSubmit(); }
       }
     });
 
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden") {
-        if (state.view === "hole") {
-          flushHoleDraft();
-        } else if (state.view === "round") {
-          flushRoundDraft();
-        } else {
-          persist();
-        }
+        if (state.view === "hole") flushHoleDraft();
+        else if (state.view === "round") flushRoundDraft();
+        else persist();
       }
     });
 
     window.addEventListener("pagehide", () => {
-      if (state.view === "hole") {
-        flushHoleDraft();
-      } else if (state.view === "round") {
-        flushRoundDraft();
-      } else {
-        persist();
-      }
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
+      else persist();
     });
 
     window.addEventListener("beforeunload", event => {
-      if (state.view === "hole") {
-        flushHoleDraft();
-      } else if (state.view === "round") {
-        flushRoundDraft();
-      }
-
-      if (state.view === "courseEdit" && courseEditDirty) {
-        event.preventDefault();
-        event.returnValue = "";
-      }
+      if (state.view === "hole") flushHoleDraft();
+      else if (state.view === "round") flushRoundDraft();
+      if (state.view === "courseEdit" && courseEditDirty) { event.preventDefault(); event.returnValue = ""; }
     });
 
     load();
 
-    const initialRoute =
-      history.state?.foreplan === true
-        ? history.state
-        : {
-            foreplan: true,
-            ...makeRoute("courses"),
-            navDepth: 0
-          };
-
+    const initialRoute = history.state?.foreplan === true ? history.state : { foreplan: true, ...makeRoute("courses"), navDepth: 0 };
     applyRoute(initialRoute, { focus: false });
     replaceCurrentRoute();
 
-    if (migratedLegacyData) {
-      localStorage.removeItem(LEGACY_STORE_KEY);
-      persist();
-    }
+    if (migratedLegacyData) persist();
 
     if (startupWarning) {
-      window.setTimeout(() => {
-        showToast(startupWarning, {
-          type: "warning",
-          duration: 6000
-        });
-      }, 200);
-    }
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .catch(error => {
-            console.warn(
-              "ForePlan service worker registration failed",
-              error
-            );
-          });
-      });
+      window.setTimeout(() => { showToast(startupWarning, { type: "warning", duration: 6000 }); }, 200);
     }
   </script>
 </body>
